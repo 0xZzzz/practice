@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>websocket</title>
+</head>
+<body>
+<span id="msg"></span>
+<input type="text" id="message"/><input type="button" value="发送" onclick="send()"/>
+</body>
+<script type="text/javascript">
+    var socket;
+    if (window.WebSocket) {
+        socket = new WebSocket("ws://localhost:8080/websocket");
+        socket.onmessage = function (event) {
+            document.getElementById('msg').innerText = event.data;
+        };
+        socket.onopen = function (event) {
+            document.getElementById('msg').innerText = "打开WebSocket服务正常，浏览器支持WebSocket";
+        };
+        socket.onclose = function (event) {
+            document.getElementById('msg').innerText = "WebSocket关闭";
+        }
+    } else {
+        alert("抱歉，您的浏览器不支持WebSocket协议！");
+    }
+
+    function send() {
+        if (!window.WebSocket) return;
+        if (socket.readyState = WebSocket.OPEN) {
+            socket.send(document.getElementById('message').value);
+        } else {
+            alert("WebSocket连接没有建立成功");
+        }
+    }
+</script>
+</html>
