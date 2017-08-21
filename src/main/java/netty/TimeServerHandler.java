@@ -1,4 +1,4 @@
-package main.java.netty;
+package netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
