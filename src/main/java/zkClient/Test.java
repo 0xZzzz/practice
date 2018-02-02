@@ -39,7 +39,7 @@ public class Test {
                 System.out.println("node" + s + " deleted.");
             }
         });
-        System.out.println(zkClient.readData(path + "/node1"));
+        System.out.println(zkClient.readData(path + "/node1").toString());
         zkClient.writeData(path + "/node1", "data2");
         TimeUnit.SECONDS.sleep(1);
     }
