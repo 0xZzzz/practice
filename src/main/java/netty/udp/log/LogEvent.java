@@ -7,7 +7,7 @@ import java.net.InetSocketAddress;
  */
 public class LogEvent {
 
-    public static final byte SEPARATOR = (byte) ':';
+    public static final byte SEPARATOR = (byte) '#';
 
     private final InetSocketAddress source; //地址
 
