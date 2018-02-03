@@ -1,4 +1,4 @@
-package main.java.nio;
+package nio;
 
 import java.util.concurrent.Executors;
 
