@@ -3,37 +3,37 @@ package valueObject;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 /**
- * ¶©µ¥½Ó¿Ú ÓÃÓÚRMIµ÷ÓÃ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½RMIï¿½ï¿½ï¿½ï¿½
  * @author ZQ
  *
  */
 public interface IOrderManager extends Remote{
 	/**
-	 * »ñÈ¡¶©µ¥
-	 * @param id ¶©µ¥id
-	 * @return Order ¶©µ¥ÐÅÏ¢
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	 * @param id ï¿½ï¿½ï¿½ï¿½id
+	 * @return Order ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	 * @throws RemoteException
 	 */
-	public Order getOrder(int id) throws RemoteException;
+	Order getOrder(int id) throws RemoteException;
 	/**
-	 * »ñÈ¡¿Í»§¶ËÃû³Æ
-	 * @param id ¶©µ¥id
-	 * @return ¿Í»§¶ËÃû³Æ
+	 * ï¿½ï¿½È¡ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param id ï¿½ï¿½ï¿½ï¿½id
+	 * @return ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @throws RemoteException
 	 */
-	public String getClientName(int id) throws RemoteException;
+	String getClientName(int id) throws RemoteException;
 	/**
-	 * »ñÈ¡²úÆ·Ãû³Æ
-	 * @param id ¶©µ¥id
-	 * @return ²úÆ·Ãû³Æ
+	 * ï¿½ï¿½È¡ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+	 * @param id ï¿½ï¿½ï¿½ï¿½id
+	 * @return ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
 	 * @throws RemoteException
 	 */
-	public String getProductName(int id) throws RemoteException;
+	String getProductName(int id) throws RemoteException;
 	/**
-	 * »ñÈ¡ÊýÁ¿
-	 * @param id ¶©µ¥id
-	 * @return ÊýÁ¿
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	 * @param id ï¿½ï¿½ï¿½ï¿½id
+	 * @return ï¿½ï¿½ï¿½ï¿½
 	 * @throws RemoteException
 	 */
-	public int getNumber(int id) throws RemoteException;
+	int getNumber(int id) throws RemoteException;
 }

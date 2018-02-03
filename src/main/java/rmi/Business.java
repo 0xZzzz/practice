@@ -3,10 +3,10 @@ package rmi;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 /**
- * ·þÎñ¶Ë¶ÔÍâÌá¹©µÄ½Ó¿Ú
+ * ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½á¹©ï¿½Ä½Ó¿ï¿½
  * @author ZQ
  *
  */
 public interface Business extends Remote{
-	public String echo(String message) throws RemoteException;
+	String echo(String message) throws RemoteException;
 }
