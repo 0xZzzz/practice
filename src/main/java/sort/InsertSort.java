@@ -3,25 +3,25 @@ package sort;
 import java.util.Arrays;
 
 /**
- * ²åÈëÅÅĞò
- * @author ZQ
+ * æ’å…¥æ’åº
  *
+ * @author ZQ
  */
 public class InsertSort {
-	public static void main(String[] args) {
-		int[] nums = {22,11,2,34,21,54,65,87,12,55};
-		int in, out;
-		System.out.println("²åÈëÅÅĞò¿ªÊ¼...");
-		for (out = 1; out < nums.length; out++) {
-			int temp = nums[out];
-			in = out;
-			while(in > 0 && nums[in - 1] > temp){
-				nums[in] = nums[in - 1];
-				--in;
-			}
-			nums[in] = temp;
-		}
-		System.out.println("²åÈëÅÅĞò½áÊø...");
-		System.out.print(Arrays.toString(nums));
-	}
+    public static void main(String[] args) {
+        int[] nums = {22, 11, 2, 34, 21, 54, 65, 87, 12, 55};
+        int in, out;
+        System.out.println("æ’å…¥æ’åºå¼€å§‹...");
+        for (out = 1; out < nums.length; out++) {
+            int temp = nums[out];
+            in = out;
+            while (in > 0 && nums[in - 1] > temp) {
+                nums[in] = nums[in - 1];
+                --in;
+            }
+            nums[in] = temp;
+        }
+        System.out.println("æ’å…¥æ’åºç»“æŸ...");
+        System.out.print(Arrays.toString(nums));
+    }
 }
