@@ -1,55 +1,56 @@
 package stack;
+
 /**
- * ÊµÏÖÕ»½á¹¹
- * @author ZQ
+ * å®ç°æ ˆç»“æ„
  *
+ * @author ZQ
  */
 public class StackDemo {
-	private int top; //Õ»¶¥
-	private int[] stackArr; //Õ»Êı×é
-	private int maxSize; //Õ»´óĞ¡
-	
-	public StackDemo(int size){
-		this.maxSize = size;
-		stackArr = new int[maxSize];
-		top = -1; //´ú±íÊı×éÀï»¹Ã»ÓĞÔªËØ
-	}
-	
-	public void push(int val){
-		stackArr[++top] = val;
-	}
-	
-	public int pop(){
-		return stackArr[top--];
-	}
-	
-	public int peek(){
-		return stackArr[top];
-	}
-	
-	public boolean isEmpty(){
-		return top == -1;
-	}
-	
-	public boolean isFull(){
-		return top == maxSize - 1;
-	}
-	
-	public static void main(String[] args) {
-		StackDemo stack = new StackDemo(10);
-		stack.push(10);
-		stack.push(20);
-		stack.push(30);
-		stack.push(40);
-		stack.push(50);
-		stack.push(60);
-		stack.push(70);
-		stack.push(80);
-		System.out.println(stack.peek());
-		System.out.println(stack.pop());
-		System.out.println(stack.peek());
-		stack.push(90);
-		System.out.println(stack.peek());
-		
-	}
+    private int top; //æ ˆé¡¶
+    private int[] stackArr; //æ ˆæ•°ç»„
+    private int maxSize; //æ ˆå¤§å°
+
+    public StackDemo(int size) {
+        this.maxSize = size;
+        stackArr = new int[maxSize];
+        top = -1; //ä»£è¡¨æ•°ç»„é‡Œè¿˜æ²¡æœ‰å…ƒç´ 
+    }
+
+    public void push(int val) {
+        stackArr[++top] = val;
+    }
+
+    public int pop() {
+        return stackArr[top--];
+    }
+
+    public int peek() {
+        return stackArr[top];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    public static void main(String[] args) {
+        StackDemo stack = new StackDemo(10);
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
+        stack.push(50);
+        stack.push(60);
+        stack.push(70);
+        stack.push(80);
+        System.out.println(stack.peek());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+        stack.push(90);
+        System.out.println(stack.peek());
+
+    }
 }
