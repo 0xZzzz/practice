@@ -1,73 +1,73 @@
 package linkedList;
 
 public class LinkListDemo {
-	private Node root;// ¸ù½Úµã
+    private Node root;// æ ¹èŠ‚ç‚¹
 
-	// Ìí¼Ó½Úµã
-	public void addNode(String name) {
-		// Èç¹û¸ù½ÚµãÎª¿Õ£¬ÄÇÃ´Ìí¼ÓµÄ¾ÍÊÇ¸ù½Úµã
-		if (root == null) {
-			root = new Node(name);
-		} else {
-			root.add(name);
-		}
-	}
+    // æ·»åŠ èŠ‚ç‚¹
+    public void addNode(String name) {
+        // å¦‚æžœæ ¹èŠ‚ç‚¹ä¸ºç©ºï¼Œé‚£ä¹ˆæ·»åŠ çš„å°±æ˜¯æ ¹èŠ‚ç‚¹
+        if (root == null) {
+            root = new Node(name);
+        } else {
+            root.add(name);
+        }
+    }
 
-	// É¾³ý½Úµã
-	public void delNode(String name) {
-		if (root != null) {
-			if (root.name.equals(name)) {
-				root = root.next;
-			} else {
-				root.del(name);
-			}
-		}
-	}
+    // åˆ é™¤èŠ‚ç‚¹
+    public void delNode(String name) {
+        if (root != null) {
+            if (root.name.equals(name)) {
+                root = root.next;
+            } else {
+                root.del(name);
+            }
+        }
+    }
 
-	// Êä³öËùÓÐ½Úµã
-	public void printNode() {
-		if (root != null) {
-			System.out.print(root.name);
-			root.print();
-			System.out.println();
-		}
-	}
+    // è¾“å‡ºæ‰€æœ‰èŠ‚ç‚¹
+    public void printNode() {
+        if (root != null) {
+            System.out.print(root.name);
+            root.print();
+            System.out.println();
+        }
+    }
 
-	// ¶¨ÒåÒ»¸ö½ÚµãÄÚ²¿Àà
-	class Node {
-		private String name;// ½ÚµãÃû³Æ
-		private Node next;// ±íÊ¾ÏÂÒ»¸ö½Úµã¶ÔÏó
+    // å®šä¹‰ä¸€ä¸ªèŠ‚ç‚¹å†…éƒ¨ç±»
+    class Node {
+        private String name;// èŠ‚ç‚¹åç§°
+        private Node next;// è¡¨ç¤ºä¸‹ä¸€ä¸ªèŠ‚ç‚¹å¯¹è±¡
 
-		public Node(String name) {
-			this.name = name;
-		}
+        public Node(String name) {
+            this.name = name;
+        }
 
-		// Ìí¼Ó½Úµã
-		public void add(String name) {
-			if (this.next == null) {
-				this.next = new Node(name);
-			} else {
-				this.next.add(name);
-			}
-		}
+        // æ·»åŠ èŠ‚ç‚¹
+        public void add(String name) {
+            if (this.next == null) {
+                this.next = new Node(name);
+            } else {
+                this.next.add(name);
+            }
+        }
 
-		// É¾³ý½Úµã
-		public void del(String name) {
-			if (this.next != null) {
-				if (this.next.name.equals(name)) {
-					this.next = this.next.next;
-				} else {
-					this.next.del(name);
-				}
-			}
-		}
+        // åˆ é™¤èŠ‚ç‚¹
+        public void del(String name) {
+            if (this.next != null) {
+                if (this.next.name.equals(name)) {
+                    this.next = this.next.next;
+                } else {
+                    this.next.del(name);
+                }
+            }
+        }
 
-		// Êä³öËùÓÐ½Úµã
-		public void print() {
-			if (this.next != null) {
-				System.out.print("-->" + this.next.name);
-				this.next.print();
-			}
-		}
-	}
+        // è¾“å‡ºæ‰€æœ‰èŠ‚ç‚¹
+        public void print() {
+            if (this.next != null) {
+                System.out.print("-->" + this.next.name);
+                this.next.print();
+            }
+        }
+    }
 }
