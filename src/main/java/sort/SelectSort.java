@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 /**
  * 选择排序
- *
- * @author ZQ
  */
 public class SelectSort {
     public static void main(String[] args) {
