@@ -7,6 +7,13 @@ import java.util.Arrays;
  */
 public class Unique {
 
+    public static void main(String[] args) {
+        int[] arr = {22, 11, 2, 34, 21, 11, 65, 11, 12, 55};
+        unique1(arr);
+        unique2(arr);
+        unique3(arr);
+    }
+
     /**
      * 方法1 就是申请一个和nums大小一样的数组tmpNums，
      * 然后遍历nums中的元素，对每个元素判断是否在tmpNums出现过，
@@ -37,6 +44,8 @@ public class Unique {
             }
         }
         nums = tmpNums;
+        System.out.println(Arrays.toString(nums));
+        System.out.println(index);
         return index;
     }
 
@@ -63,6 +72,8 @@ public class Unique {
                 nums[index++] = nums[i];
             }
         }
+        System.out.println(Arrays.toString(nums));
+        System.out.println(index);
         return index;
     }
 
@@ -98,6 +109,8 @@ public class Unique {
                 nums[index++] = nums[i];
             }
         }
+        System.out.println(Arrays.toString(nums));
+        System.out.println(index);
         return index;
     }
 
