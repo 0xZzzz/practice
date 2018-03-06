@@ -15,6 +15,7 @@ public class QuickSort {
 
     public static void quickSort1(int[] arr, int left, int right) {
         if (left < right) {
+
             int i = left, j = right, x = arr[left];
             while (i < j) {
                 while (i < j && arr[j] >= x) // 从右向左找第一个小于x的数
@@ -30,6 +31,10 @@ public class QuickSort {
             quickSort1(arr, left, i - 1); //排序小元素
             quickSort1(arr, i + 1, right); //排序大元素
         }
+    }
+
+    public static void swapMedian(int[] arr, int left, int right) {
+
     }
 
     public static void quickSort2(int[] arr, int left, int right) {
