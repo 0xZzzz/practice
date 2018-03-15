@@ -2,8 +2,6 @@ package binaryTree;
 
 /**
  * 二叉树实现
- *
- * @author ZQ
  */
 public class BinaryTree {
 
@@ -25,12 +23,12 @@ public class BinaryTree {
         }
     }
 
-    class Node {
+    private class Node {
         private int data; // 当前节点数据
         private Node left; // 左子树
         private Node right; // 右子树
 
-        public Node(int data) {
+        private Node(int data) {
             this.data = data;
         }
 
@@ -39,7 +37,7 @@ public class BinaryTree {
          *
          * @param data 要添加的数据
          */
-        public void addNode(int data) {
+        private void addNode(int data) {
             if (this.data > data) { // 满足条件则代表该数据应放在当前节点左侧
                 if (this.left == null) { // 如果当前节点左子树为空, 则创建该数据为当前节点的左子树
                     this.left = new Node(data);
@@ -60,7 +58,7 @@ public class BinaryTree {
         /**
          * 中序遍历(左中右)
          */
-        public void printNode() {
+        private void printNode() {
             if (this.left != null) {
                 this.left.printNode();
             }

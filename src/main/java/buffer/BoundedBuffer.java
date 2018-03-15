@@ -5,66 +5,67 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * °ó¶¨»º³åÇø (×èÈû¶ÓÁĞ)
- * @author ZQ
- *
+ * ç»‘å®šç¼“å†²åŒº (é˜»å¡é˜Ÿåˆ—)
  */
 public class BoundedBuffer {
-	private Object[] items;
-	private final Lock lock = new ReentrantLock();
-	private final Condition notFull = lock.newCondition(); //²»ÂúÌõ¼ş
-	private final Condition notEmpty = lock.newCondition(); //²»¿ÕÌõ¼ş
-	/*
-	 * putIndex: ·ÅÊı¾İË÷Òı
-	 * takeIndex: È¡Êı¾İË÷Òı
-	 * count: ¶ÔÏóÊı×éÖĞµÄ¶ÔÏóÊı
-	 */
-	private int putIndex, takeIndex, count;
-	
-	public BoundedBuffer(int size){
-		items = new Object[size];
-	}
-	/**
-	 * ·ÅÈë¶ÔÏó(Êı×éÖĞ¶ÔÏó²»ÂúÊ±²ÅÄÜ·Å¶ÔÏó)
-	 * @param obj
-	 * @throws InterruptedException
-	 */
-	public void put(Object obj) throws InterruptedException{
-		lock.lock();
-		try {
-			while(count == items.length){ //Èç¹û¶ÔÏóÊı×éÖĞ´æÂúÁË¶ÔÏó, ÈÃ²»ÂúÌõ¼şµÈ×Å
-				notFull.await();
-			}
-			items[putIndex] = obj; //Èç¹û¶ÔÏóÊı×é²»Âú, Ôò·ÅÈë¶ÔÏó, ²¢½«·ÅÊı¾İË÷Òı¼Ó1
-			if(++putIndex == items.length){ 
-				putIndex = 0;
-			}
-			++count; //¶ÔÏó×ÜÊı¼Ó1
-			notEmpty.signal(); //»½ĞÑ²»¿ÕÌõ¼ş¿ÉÒÔÈ¡ÁË
-		} finally {
-			lock.unlock();
-		}
-	}
-	/**
-	 * È¡¶ÔÏó(Êı×éÖĞ¶ÔÏó²»¿ÕÊ±²ÅÄÜÈ¡¶ÔÏó)
-	 * @return
-	 * @throws InterruptedException
-	 */
-	public Object take() throws InterruptedException{
-		lock.lock();
-		try {
-			while(count == 0){//Èç¹û¶ÔÏóÊı×éÃ»¶ÔÏóÁË, ÈÃ²»¿ÕÌõ¼şµÈ×Å
-				notEmpty.await();
-			}
-			Object obj = items[takeIndex];
-			if(++takeIndex == items.length){ //Èç¹û¶ÔÏóÊı×é²»Îª¿ÕÔòÈ¡³öÒ»¸ö¶ÔÏó, ²¢½²È¡Ë÷Òı¼Ó1
-				takeIndex = 0;
-			}
-			--count; //¶ÔÏó×ÜÊı¼õ1
-			notFull.signal(); //»½ĞÑ²»ÂúÌõ¼ş¿ÉÒÔ·ÅÁË
-			return obj;
-		} finally {
-			lock.unlock();
-		}
-	}
+
+    private Object[] items;
+
+    private final Lock lock = new ReentrantLock();
+
+    private final Condition notFull = lock.newCondition(); //ä¸æ»¡æ¡ä»¶
+
+    private final Condition notEmpty = lock.newCondition(); //ä¸ç©ºæ¡ä»¶
+
+    /**
+     * putIndex: æ”¾æ•°æ®ç´¢å¼•
+     * takeIndex: å–æ•°æ®ç´¢å¼•
+     * count: å¯¹è±¡æ•°ç»„ä¸­çš„å¯¹è±¡æ•°
+     */
+    private int putIndex, takeIndex, count;
+
+    public BoundedBuffer(int size) {
+        items = new Object[size];
+    }
+
+    /**
+     * æ”¾å…¥å¯¹è±¡(æ•°ç»„ä¸­å¯¹è±¡ä¸æ»¡æ—¶æ‰èƒ½æ”¾å¯¹è±¡)
+     */
+    public void put(Object obj) throws InterruptedException {
+        lock.lock();
+        try {
+            while (count == items.length) { //å¦‚æœå¯¹è±¡æ•°ç»„ä¸­å­˜æ»¡äº†å¯¹è±¡, è®©ä¸æ»¡æ¡ä»¶ç­‰ç€
+                notFull.await();
+            }
+            items[putIndex] = obj; //å¦‚æœå¯¹è±¡æ•°ç»„ä¸æ»¡, åˆ™æ”¾å…¥å¯¹è±¡, å¹¶å°†æ”¾æ•°æ®ç´¢å¼•åŠ 1
+            if (++putIndex == items.length) {
+                putIndex = 0;
+            }
+            ++count; //å¯¹è±¡æ€»æ•°åŠ 1
+            notEmpty.signal(); //å”¤é†’ä¸ç©ºæ¡ä»¶å¯ä»¥å–äº†
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    /**
+     * å–å¯¹è±¡(æ•°ç»„ä¸­å¯¹è±¡ä¸ç©ºæ—¶æ‰èƒ½å–å¯¹è±¡)
+     */
+    public Object take() throws InterruptedException {
+        lock.lock();
+        try {
+            while (count == 0) {//å¦‚æœå¯¹è±¡æ•°ç»„æ²¡å¯¹è±¡äº†, è®©ä¸ç©ºæ¡ä»¶ç­‰ç€
+                notEmpty.await();
+            }
+            Object obj = items[takeIndex];
+            if (++takeIndex == items.length) { //å¦‚æœå¯¹è±¡æ•°ç»„ä¸ä¸ºç©ºåˆ™å–å‡ºä¸€ä¸ªå¯¹è±¡, å¹¶è®²å–ç´¢å¼•åŠ 1
+                takeIndex = 0;
+            }
+            --count; //å¯¹è±¡æ€»æ•°å‡1
+            notFull.signal(); //å”¤é†’ä¸æ»¡æ¡ä»¶å¯ä»¥æ”¾äº†
+            return obj;
+        } finally {
+            lock.unlock();
+        }
+    }
 }

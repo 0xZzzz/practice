@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 /**
  * 二分查找算法
- *
- * @author ZQ
  */
 public class BinarySearch {
     public static void main(String[] args) {
@@ -19,7 +17,7 @@ public class BinarySearch {
     public static int binarySearch(int[] arr, int n) {
         int start = 0;//起始位置
         int end = arr.length - 1;//结束位置
-        int mid = -1;
+        int mid;
         while (start <= end) {
             mid = (start + end) / 2;
             if (arr[mid] == n) {
