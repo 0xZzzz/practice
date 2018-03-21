@@ -6,39 +6,39 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * ÊµÏÖ¼òµ¥µÄ»º´æÏµÍ³
+ * å®ç°ç®€å•çš„ç¼“å­˜ç³»ç»Ÿ
  */
-public class Cache<T>{
-	private Map<String, T> map = new HashMap<String, T>();
-	private ReadWriteLock rwl = new ReentrantReadWriteLock();
-	
-	public T get(String key){
-		rwl.readLock().lock();//»ñÈ¡µÄÊ±ºòÉÏ¶ÁËø
-		T t = null;
-		try {
-			t = map.get(key);
-			if(t == null){ 
-				/*
-				 * Èç¹û¶ÔÏóÎª¿Õ, ½â¿ª¶ÁËøÉÏĞ´Ëø
+public class Cache<T> {
+    private Map<String, T> map = new HashMap<String, T>();
+    private ReadWriteLock rwl = new ReentrantReadWriteLock();
+
+    public T get(String key) {
+        rwl.readLock().lock();//è·å–çš„æ—¶å€™ä¸Šè¯»é”
+        T t = null;
+        try {
+            t = map.get(key);
+            if (t == null) {
+                /*
+				 * å¦‚æœå¯¹è±¡ä¸ºç©º, è§£å¼€è¯»é”ä¸Šå†™é”
 				 */
-				rwl.readLock().unlock(); 
-				rwl.writeLock().lock();
-				try {
-					if(t == null){ //±ÜÃâ¶àÏß³Ì²¢·¢Ê±ÖØ¸´²éÑ¯Êı¾İ¿â
-						//t = Êı¾İ¿â²éÑ¯
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					rwl.writeLock().unlock(); //ÎªÁË±ÜÃâËÀËø, Ê¹ÓÃ try finally ¿é½âËø
-				}
-				rwl.readLock().lock();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			rwl.readLock().unlock();
-		}
-		return t;
-	}
+                rwl.readLock().unlock();
+                rwl.writeLock().lock();
+                try {
+                    if (t == null) { //é¿å…å¤šçº¿ç¨‹å¹¶å‘æ—¶é‡å¤æŸ¥è¯¢æ•°æ®åº“
+                        //t = æ•°æ®åº“æŸ¥è¯¢
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    rwl.writeLock().unlock(); //ä¸ºäº†é¿å…æ­»é”, ä½¿ç”¨ try finally å—è§£é”
+                }
+                rwl.readLock().lock();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            rwl.readLock().unlock();
+        }
+        return t;
+    }
 }
