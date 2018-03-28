@@ -35,7 +35,7 @@ public class Limiter {
             rateLimiter = RateLimiter.create(30.0, 30, TimeUnit.MINUTES);
             limiterCache.putIfAbsent(ip, rateLimiter);
         }
-        if (rateLimiter.tryAcquire()) {
+        if (!rateLimiter.tryAcquire()) {
             Transaction multi = redis.multi();
             redis.set(key, "1");
             redis.expire(key, 30 * 60);
