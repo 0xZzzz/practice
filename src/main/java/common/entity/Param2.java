@@ -1,8 +1,10 @@
-package optional;
+package common.entity;
 
 import java.util.Optional;
 
 public class Param2 {
+
+    private int intField;
 
     private String field2;
 
@@ -22,5 +24,13 @@ public class Param2 {
 
     public void setParam3(Param3 param3) {
         this.param3 = Optional.ofNullable(param3);
+    }
+
+    public int getIntField() {
+        return intField;
+    }
+
+    public void setIntField(int intField) {
+        this.intField = intField;
     }
 }

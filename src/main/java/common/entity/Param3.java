@@ -1,4 +1,4 @@
-package optional;
+package common.entity;
 
 import java.util.Optional;
 

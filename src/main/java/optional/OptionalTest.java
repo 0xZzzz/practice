@@ -1,5 +1,9 @@
 package optional;
 
+import common.entity.Param;
+import common.entity.Param2;
+import common.entity.Param3;
+
 import java.util.Optional;
 
 /**
