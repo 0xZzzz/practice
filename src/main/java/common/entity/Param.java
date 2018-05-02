@@ -36,4 +36,12 @@ public class Param {
     public void setParam2(Param2 param2) {
         this.param2 = Optional.ofNullable(param2);
     }
+
+    public void a() {
+
+    }
+
+    public void b() {
+
+    }
 }
