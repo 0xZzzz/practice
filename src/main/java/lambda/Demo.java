@@ -23,7 +23,6 @@ public class Demo {
          *      (parameters) -> expression
          *      (parameters) -> { statement; }
          */
-
     }
 
     public void demo() {
@@ -61,6 +60,8 @@ public class Demo {
         Supplier<Param> paramSupplier = Param::new;
         Param param = paramSupplier.get();
 
+        // 比较器符合
+        new ArrayList<Param1>().sort(Comparator.comparing(Param1::getIntField).reversed().thenComparing(Param1::getField1));
     }
 
     /**
