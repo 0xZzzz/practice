@@ -2,6 +2,8 @@ package lambda;
 
 import common.entity.Param;
 import common.entity.Param1;
+import common.entity.Param2;
+import common.entity.Param3;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -43,7 +45,7 @@ public class Demo {
         Comparator<Param1> comparator4 = (o1, o2) -> o1.getIntField() > o2.getIntField() ? 1 : -1;
 
         // Predicate：用于表示一个涉及类型T的布尔表达式 T -> boolean
-        Predicate<Param> paramPredicate = (p) -> p.getField().length() > 0;
+        Predicate<Param> paramPredicate = (p) -> p.getField().length() > 100;
         demoPredicate(new ArrayList<>(), paramPredicate);
 
         // Consumer：用于执行类型T对象的的某些操作 T -> void
@@ -62,6 +64,12 @@ public class Demo {
 
         // 比较器符合
         new ArrayList<Param1>().sort(Comparator.comparing(Param1::getIntField).reversed().thenComparing(Param1::getField1));
+
+        // 谓词符合
+        paramPredicate = paramPredicate.negate().and(p -> p.getField().length() < 200).or(p -> p.getField().length() < 50);
+
+        // 函数复合
+        Function<Param, Param3> param3Function = paramFunction.andThen(p1 -> new Param2()).andThen(p2 -> new Param3());
     }
 
     /**
