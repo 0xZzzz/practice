@@ -1,4 +1,4 @@
-package lambda;
+package java8.lambda;
 
 import common.entity.Param;
 import common.entity.Param1;
