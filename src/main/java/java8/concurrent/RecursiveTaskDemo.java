@@ -46,7 +46,7 @@ public class RecursiveTaskDemo {
             Task leftTask = new Task(array, start, start + length / 2); // 创建一个子任务为数组的前一半求和
             leftTask.fork(); // 利用另一个ForkJoinPool线程异步执行新创建的子任务
             Task rightTask = new Task(array, start + length / 2, end); // 创建一个子任务为数组的后一半求和
-            Long rightResult = rightTask.compute(); //同步执行第二个子任务，有可能允许进一步递归划分
+            Long rightResult = rightTask.compute(); // 同步执行第二个子任务，有可能允许进一步递归划分
             Long leftResult = leftTask.join(); // 读取第一个子任务的结果，如果尚未完成就等待
             return leftResult + rightResult; // 结果为两个子任务的结果的组合
         }
