@@ -1,6 +1,5 @@
 package zkClient;
 
-import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.IZkDataListener;
 import org.I0Itec.zkclient.ZkClient;
 
@@ -16,11 +15,7 @@ public class Test {
         String path = "/zq";
 
         /* node operation */
-        zkClient.subscribeChildChanges(path, new IZkChildListener() {
-            public void handleChildChange(String s, List<String> list) throws Exception {
-                System.out.println(s + "'s child changed, currentChildren: " + list);
-            }
-        });
+        zkClient.subscribeChildChanges(path, (String s, List<String> list) -> System.out.println(s + "'s child changed, currentChildren: " + list));
 
         zkClient.createPersistent(path + "/node1", true);
         zkClient.writeData(path + "/node1", "data1");
