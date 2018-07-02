@@ -1,9 +1,11 @@
 package pattern.dynamicProxy;
+
 /**
  * 被代理的主题接口
- * @author ZQ
  *
+ * @author 0xZzzz
  */
 public interface Subject {
-	public void doSome();
+
+    void doSome();
 }
