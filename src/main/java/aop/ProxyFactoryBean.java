@@ -5,41 +5,40 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * ´úÀí¹¤³§
+ * ä»£ç†å·¥å‚bean
  */
 public class ProxyFactoryBean {
-	
-	//ÔöÇ¿·½·¨
-	private Advice advice;
-	//Ä¿±ê¶ÔÏó
-	private Object target;
-	
-	public void setAdvice(Advice advice) {
-		this.advice = advice;
-	}
 
-	public void setTarget(Object target) {
-		this.target = target;
-	}
+    // å¢å¼ºå™¨
+    private Advice advice;
 
-	/**
-	 * »ñÈ¡´úÀí¶ÔÏó
-	 * @return
-	 */
-	public Object getProxy(){
-		return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
-			
-			@Override
-			public Object invoke(Object proxy, Method method, Object[] args)
-					throws Throwable {
-				
-				advice.before();
-				method.invoke(target, args);
-				System.out.println("finish invoke method...");
-				advice.after();
-				
-				return proxy;
-			}
-		});
-	}
+    // ç›®æ ‡å¯¹è±¡
+    private Object target;
+
+    public void setAdvice(Advice advice) {
+        this.advice = advice;
+    }
+
+    public void setTarget(Object target) {
+        this.target = target;
+    }
+
+    /**
+     * è·å–ä»£ç†
+     */
+    public Object getProxy() {
+        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new InvocationHandler() {
+
+            public Object invoke(Object proxy, Method method, Object[] args)
+                    throws Throwable {
+
+                advice.before();
+                method.invoke(target, args);
+                System.out.println("finish invoke method...");
+                advice.after();
+
+                return proxy;
+            }
+        });
+    }
 }
