@@ -7,9 +7,7 @@ public class Test {
 	}
 	
 	/**
-	 * 递归求和
-	 * @param num 数字
-	 * @return 1~num的数字之和
+	 * 閫掑綊姹傚拰
 	 */
 	public static int add(int num){
 		if(num <= 1){
