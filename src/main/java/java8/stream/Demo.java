@@ -58,15 +58,15 @@ public class Demo {
         System.err.println(anyMatch);
 
         // findAny，findFirst，区别是findAny在并行时限制较少
-        Optional<Param1> optional = list.stream().filter(p -> p.getIntField() > 2).findAny();
-        System.err.println(optional.isPresent() ? optional.get() : null);
+        Optional<Param1> optional = list.stream().filter(p -> p.getIntField() > 5).findAny();
+        System.err.println(optional.orElse(null));
 
         // reduce 归约，将流归约成一个值
         Optional<Integer> optionalInt1 = Stream.of(1, 2, 3, 4, 3, 5, 2).filter(i -> i > 2).reduce((i1, i2) -> i1 + i2);
-        System.err.println(optionalInt1.isPresent() ? optionalInt1.get() : null);
+        System.err.println(optionalInt1.orElse(null));
 
         Optional<Integer> optionalInt2 = Stream.of(1, 2, 3, 4, 3, 5, 2).reduce(Integer::max);
-        System.err.println(optionalInt2.isPresent() ? optionalInt2.get() : null);
+        System.err.println(optionalInt2.get());
 
         // 数值流 可以避免自动拆装箱的性能损耗 mapToInt 对象流转换成数值流 boxed 转换回对象流
         int sum = list.stream().filter(p -> p.getIntField() > 3).mapToInt(Param1::getIntField).sum();
@@ -89,7 +89,7 @@ public class Demo {
         Stream.generate(Math::random).limit(3).forEach(System.err::println);
 
         // 汇总 summingInt
-        int total = list.stream().collect(Collectors.summingInt(Param1::getIntField));
+        int total = list.stream().mapToInt(Param1::getIntField).sum();
         System.err.println(total);
 
         // 平均值 averagingInt
