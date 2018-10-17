@@ -10,7 +10,7 @@ public class Test {
         Random random = new Random();
         for (int i = 0; i < 5; i++) {
             int r = random.nextInt(2);
-            System.out.println("当前模式: " + (r == 0 ? "预览模式" : (r == 1 ? "编辑模式" : "")));
+            System.out.println("褰撳墠妯″紡: " + (r == 0 ? "棰勮妯″紡" : (r == 1 ? "缂栬緫妯″紡" : "")));
             context.doWork(r);
         }
     }

@@ -1,22 +1,22 @@
 package pattern.state;
 
 /**
- * ×´Ì¬½Ó¿Ú
+ * çŠ¶æ€æ¥å£
  */
 public interface IState {
 
-    //×´Ì¬×ª»»
+    //çŠ¶æ€è½¬æ¢
     void convertState(Context context, int mode);
 
-    //±£´æ·½·¨
+    //ä¿å­˜æ–¹æ³•
     void save(Context context);
 
-    //ĞŞ¸Ä·½·¨
+    //ä¿®æ”¹æ–¹æ³•
     void modify(Context context);
 
-    //ĞÂÔö·½·¨
+    //æ–°å¢æ–¹æ³•
     void add(Context context);
 
-    //²é¿´·½·¨
+    //æŸ¥çœ‹æ–¹æ³•
     void view(Context context);
 }

@@ -1,11 +1,11 @@
 package pattern.state;
 
 /**
- * Ô¤ÀÀÄ£Ê½
+ * é¢„è§ˆæ¨¡å¼
  */
 public class PreviewState implements IState {
 
-    //×´Ì¬×ª»»
+    //çŠ¶æ€è½¬æ¢
     @Override
     public void convertState(Context context, int mode) {
         if (mode == Context.EDIT_MODE) {
@@ -13,28 +13,28 @@ public class PreviewState implements IState {
         }
     }
 
-    //Ô¤ÀÀÄ£Ê½±£´æ
+    //é¢„è§ˆæ¨¡å¼ä¿å­˜
     @Override
     public void save(Context context) {
-        System.out.println("Ô¤ÀÀÄ£Ê½²»Ö§³Ö[±£´æ]¹¦ÄÜ!");
+        System.out.println("é¢„è§ˆæ¨¡å¼ä¸æ”¯æŒ[ä¿å­˜]åŠŸèƒ½!");
     }
 
-    //Ô¤ÀÀÄ£Ê½ĞŞ¸Ä
+    //é¢„è§ˆæ¨¡å¼ä¿®æ”¹
     @Override
     public void modify(Context context) {
-        System.out.println("Ô¤ÀÀÄ£Ê½²»Ö§³Ö[ĞŞ¸Ä]¹¦ÄÜ!");
+        System.out.println("é¢„è§ˆæ¨¡å¼ä¸æ”¯æŒ[ä¿®æ”¹]åŠŸèƒ½!");
     }
 
-    //Ô¤ÀÀÄ£Ê½Ìí¼Ó
+    //é¢„è§ˆæ¨¡å¼æ·»åŠ 
     @Override
     public void add(Context context) {
-        System.out.println("Ô¤ÀÀÄ£Ê½²»Ö§³Ö[ĞÂÔö]¹¦ÄÜ!");
+        System.out.println("é¢„è§ˆæ¨¡å¼ä¸æ”¯æŒ[æ–°å¢]åŠŸèƒ½!");
     }
 
-    //Ô¤ÀÀÄ£Ê½²é¿´
+    //é¢„è§ˆæ¨¡å¼æŸ¥çœ‹
     @Override
     public void view(Context context) {
-        System.out.println("Ô¤ÀÀÄ£Ê½[²é¿´]...");
+        System.out.println("é¢„è§ˆæ¨¡å¼[æŸ¥çœ‹]...");
     }
 
 }

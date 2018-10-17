@@ -1,25 +1,25 @@
 package pattern.state;
 
 /**
- * ÉÏÏÂÎÄ»·¾³
+ * ä¸Šä¸‹æ–‡ç¯å¢ƒ
  */
 public class Context {
 
-    //Ô¤ÀÀÄ£Ê½
+    //é¢„è§ˆæ¨¡å¼
     public static final int PREVIEW_MODE = 0;
 
-    //±à¼­Ä£Ê½
+    //ç¼–è¾‘æ¨¡å¼
     public static final int EDIT_MODE = 1;
 
-    //±£´æµ±Ç°×´Ì¬
+    //ä¿å­˜å½“å‰çŠ¶æ€
     private IState state;
 
-    //¸Ä±ä×´Ì¬
+    //æ”¹å˜çŠ¶æ€
     public void changeState(IState state) {
         this.state = state;
     }
 
-    //ÔËĞĞ
+    //è¿è¡Œ
     public void doWork(int mode) {
         System.out.println("---------------------");
         this.state.convertState(this, mode);

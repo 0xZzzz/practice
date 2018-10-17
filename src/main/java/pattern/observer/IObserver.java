@@ -1,10 +1,16 @@
 package pattern.observer;
 
 /**
- * ¹Û²ìÕß½Ó¿Ú
+ * è§‚å¯Ÿè€…æ¥å£
+ *
+ * @author 0xZzzz
  */
 public interface IObserver {
 
-    //¸üĞÂ·½·¨
+    /**
+     * å˜æ›´é€šçŸ¥
+     *
+     * @param subject ä¸»é¢˜
+     */
     void update(ISubject subject);
 }
