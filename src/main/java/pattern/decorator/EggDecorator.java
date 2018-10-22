@@ -1,7 +1,9 @@
 package pattern.decorator;
 
 /**
- * ¼¦µ° ¾ßÌåµÄ×°ÊÎÕß¶ÔÏó
+ * é¸¡è›‹ å…·ä½“çš„è£…é¥°è€…å¯¹è±¡
+ *
+ * @author 0xZzzz
  */
 public class EggDecorator extends Decorator {
 
@@ -16,6 +18,6 @@ public class EggDecorator extends Decorator {
 
     @Override
     public String desc() {
-        return super.desc() + "¼Ó¼¦µ°";
+        return super.desc() + "åŠ é¸¡è›‹";
     }
 }

@@ -1,7 +1,9 @@
 package pattern.decorator;
 
 /**
- * ¾ßÌåµÄ±»×°ÊÎÕß¶ÔÏó
+ * å…·ä½“çš„è¢«è£…é¥°è€…å¯¹è±¡
+ *
+ * @author 0xZzzz
  */
 public class SoyaBeanMilk implements Drink {
 
@@ -12,6 +14,6 @@ public class SoyaBeanMilk implements Drink {
 
     @Override
     public String desc() {
-        return "´¿¶¹½¬";
+        return "çº¯è±†æµ†";
     }
 }

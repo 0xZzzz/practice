@@ -1,13 +1,21 @@
 package pattern.decorator;
 
+/**
+ * è£…é¥°ç€æµ‹è¯•äº†ç±»
+ *
+ * @author 0xZzzz
+ */
 public class Test {
 
     public static void main(String[] args) {
-        Drink soya = new SoyaBeanMilk(); //ÂòÒ»±­´¿¶¹½¬
-        EggDecorator egg = new EggDecorator(soya); //¼Ó¼¦µ°
-        SugarDecorator sugar = new SugarDecorator(egg); //¼ÓÌÇ
+        //ä¹°ä¸€æ¯çº¯è±†æµ†
+        Drink soya = new SoyaBeanMilk();
+        //åŠ é¸¡è›‹
+        EggDecorator egg = new EggDecorator(soya);
+        //åŠ ç³–
+        SugarDecorator sugar = new SugarDecorator(egg);
 
-        System.out.println("Äú¹ºÂòÁË: " + sugar.desc());
-        System.out.println("¹²¼Æ(?): " + sugar.cost());
+        System.out.println("æ‚¨è´­ä¹°äº†: " + sugar.desc());
+        System.out.println("å…±è®¡(?): " + sugar.cost());
     }
 }

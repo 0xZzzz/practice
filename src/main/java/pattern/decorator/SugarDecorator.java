@@ -1,7 +1,9 @@
 package pattern.decorator;
 
 /**
- * ÌÇ  ¾ßÌåµÄ×°ÊÎÕß¶ÔÏó
+ * ç³– å…·ä½“çš„è£…é¥°è€…å¯¹è±¡
+ *
+ * @author 0xZzzz
  */
 public class SugarDecorator extends Decorator {
 
@@ -16,6 +18,6 @@ public class SugarDecorator extends Decorator {
 
     @Override
     public String desc() {
-        return super.desc() + "¼ÓÌÇ";
+        return super.desc() + "åŠ ç³–";
     }
 }
