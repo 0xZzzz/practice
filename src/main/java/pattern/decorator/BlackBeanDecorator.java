@@ -1,7 +1,7 @@
 package pattern.decorator;
 
 /**
- * ºÚ¶¹ ¾ßÌåµÄ×°ÊÎÕß¶ÔÏó
+ * é»‘è±† å…·ä½“çš„è£…é¥°è€…å¯¹è±¡
  *
  * @author 0xZzzz
  */
@@ -18,6 +18,6 @@ public class BlackBeanDecorator extends Decorator {
 
     @Override
     public String desc() {
-        return super.desc() + "¼ÓºÚ¶¹";
+        return super.desc() + "åŠ é»‘è±†";
     }
 }

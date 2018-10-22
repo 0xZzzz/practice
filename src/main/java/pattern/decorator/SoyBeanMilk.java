@@ -5,7 +5,7 @@ package pattern.decorator;
  *
  * @author 0xZzzz
  */
-public class SoyaBeanMilk implements Drink {
+public class SoyBeanMilk implements Drink {
 
     @Override
     public float cost() {

@@ -1,11 +1,13 @@
 package pattern.decorator;
 
 /**
- * 装饰者类
+ * 瑁呴グ鑰呯被
+ *
+ * @author 0xZzzz
  */
 public class Decorator implements Drink {
 
-    private Drink drink; //具体的被装饰对象
+    private Drink drink;
 
     public Decorator(Drink drink) {
         this.drink = drink;

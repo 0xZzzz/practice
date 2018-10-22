@@ -1,11 +1,23 @@
 package pattern.decorator;
 
 /**
- * ±»×°ÊÎÕß¶ÔÏó½Ó¿Ú
+ * è¢«è£…é¥°è€…å¯¹è±¡æ¥å£
+ *
+ * @author 0xZzzz
  */
 public interface Drink {
 
-    float cost(); //ÒûÁÏµÄ¼Û¸ñ
+    /**
+     * é¥®æ–™çš„ä»·æ ¼
+     *
+     * @return ä»·æ ¼
+     */
+    float cost();
 
-    String desc(); //ÒûÁÏµÄÃèÊö
+    /**
+     * é¥®æ–™çš„æè¿°
+     *
+     * @return æè¿°
+     */
+    String desc();
 }
