@@ -1,21 +1,31 @@
 package pattern.builder;
 
 /**
- * ³éÏóÌ×²Í½¨Ôì½Ó¿Ú
+ * æŠ½è±¡å¥—é¤å»ºé€ æ¥å£
  *
  * @author 0xZzzz
  */
 public interface IMobileBuilder {
 
-    //½¨ÔìÌ×²Í»°·Ñ
+    /**
+     * å»ºé€ å¥—é¤è¯è´¹
+     */
     void buildMoney();
 
-    //½¨ÔìÌ×²Í²ÊÁå
+    /**
+     * å»ºé€ å¥—é¤å½©é“ƒ
+     */
     void buildMusic();
 
-    //½¨ÔìÌ×²Í¶ÌĞÅ
+    /**
+     * å»ºé€ å¥—é¤çŸ­ä¿¡
+     */
     void buildShortInfo();
 
-    //·µ»Ø½¨ÔìµÄÊÖ»úÌ×²Í¶ÔÏó
+    /**
+     * è¿”å›å»ºé€ çš„æ‰‹æœºå¥—é¤å¯¹è±¡
+     *
+     * @return è¿”å›å¥—é¤ä¿¡æ¯
+     */
     MobilePackage getMobilePackage();
 }

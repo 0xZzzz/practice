@@ -4,15 +4,15 @@ public class Test {
 
     public static void main(String[] args) {
 
-        //´´½¨Õß
+        //åˆ›å»ºè€…
         MobileDirector mobileDirector = new MobileDirector();
-        //¾ßÌåµÄ±»´´½¨Õß¶ÔÏó
+        //å…·ä½“çš„è¢«åˆ›å»ºè€…å¯¹è±¡
         IMobileBuilder mobileBuilder1 = new MobileBuilderImpl1();
         IMobileBuilder mobileBuilder2 = new MobileBuilderImpl2();
-        //´´½¨·½·¨
+        //åˆ›å»ºæ–¹æ³•
         MobilePackage mobilePackage1 = mobileDirector.createMobilePackage(mobileBuilder1);
         MobilePackage mobilePackage2 = mobileDirector.createMobilePackage(mobileBuilder2);
-        //´òÓ¡´´½¨½á¹û
+        //æ‰“å°åˆ›å»ºç»“æœ
         System.out.println(mobilePackage1);
         System.out.println(mobilePackage2);
     }

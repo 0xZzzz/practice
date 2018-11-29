@@ -1,19 +1,19 @@
 package pattern.builder;
 
 /**
- * ³éÏó½¨ÔìÕß
+ * æŠ½è±¡å»ºé€ è€…
  *
  * @author 0xZzzz
  */
 public class AbstractBasePackage {
 
     /**
-     * Î¬»¤Ò»¸öÊÖ»úÌ×²Í¶ÔÏó
+     * ç»´æŠ¤ä¸€ä¸ªæ‰‹æœºå¥—é¤å¯¹è±¡
      */
     protected MobilePackage mobilePackage;
 
     /**
-     * ¹¹Ôì·½·¨ÎªÌ×²Í´´½¨Ò»¸öĞÂµÄ¶ÔÏó
+     * æ„é€ æ–¹æ³•ä¸ºå¥—é¤åˆ›å»ºä¸€ä¸ªæ–°çš„å¯¹è±¡
      */
     public AbstractBasePackage() {
         this.mobilePackage = new MobilePackage();

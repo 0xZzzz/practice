@@ -3,18 +3,18 @@ package pattern.builder;
 public class MobileDirector {
 
     /**
-     * ¹¹½¨¶ÔÏó
+     * æ„å»ºå¯¹è±¡
      *
-     * @param mobileBuilder ³éÏó½¨ÔìÕß
-     * @return ¹¹½¨ºÃµÄ¶ÔÏó
+     * @param mobileBuilder æŠ½è±¡å»ºé€ è€…
+     * @return æ„å»ºå¥½çš„å¯¹è±¡
      */
     public MobilePackage createMobilePackage(IMobileBuilder mobileBuilder) {
         if (mobileBuilder != null) {
-            //·Ö²¿¹¹½¨
+            //åˆ†éƒ¨æ„å»º
             mobileBuilder.buildMoney();
             mobileBuilder.buildShortInfo();
             mobileBuilder.buildMusic();
-            //¹¹½¨½áÊøºó·µ»Ø¶ÔÏó
+            //æ„å»ºç»“æŸåè¿”å›å¯¹è±¡
             return mobileBuilder.getMobilePackage();
         }
         return null;

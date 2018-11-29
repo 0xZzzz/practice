@@ -1,31 +1,27 @@
 package pattern.builder;
 
 /**
- * ¾ßÌåµÄ½¨ÔìÕß(·Ö²¿½¨Ôì¶ÔÏó²¢·µ»Ø)
+ * å…·ä½“çš„å»ºé€ è€…(åˆ†éƒ¨å»ºé€ å¯¹è±¡å¹¶è¿”å›)
  *
  * @author 0xZzzz
  */
 public class MobileBuilderImpl2 extends AbstractBasePackage implements IMobileBuilder {
 
-    //ÉèÖÃ¶ÔÏóµÄÌ×²Í¼Û¸ñÊôĞÔ
     @Override
     public void buildMoney() {
         this.mobilePackage.setMoney(30);
     }
 
-    //ÉèÖÃ¶ÔÏóµÄ²ÊÁåÊôĞÔ
     @Override
     public void buildMusic() {
-        this.mobilePackage.setMusic("×íÇå·ç");
+        this.mobilePackage.setMusic("é†‰æ¸…é£");
     }
 
-    //ÉèÖÃ¶ÔÏóµÄ¶ÌĞÅÌõÊıÊôĞÔ
     @Override
     public void buildShortInfo() {
         this.mobilePackage.setShortInfo(600);
     }
 
-    //·µ»Ø¹¹½¨ºÃµÄ¶ÔÏó
     @Override
     public MobilePackage getMobilePackage() {
         return this.mobilePackage;
