@@ -15,7 +15,7 @@ import javax.crypto.spec.DHParameterSpec;
 
 import org.apache.commons.codec.binary.Base64;
 /**
- * ·Ç¶Ô³Æ¼ÓÃÜËã·¨ DH ÃÜÔ¿½»»»Ëã·¨
+ * éå¯¹ç§°åŠ å¯†ç®—æ³• DH å¯†é’¥äº¤æ¢ç®—æ³•
  * @author ZQ
  *
  */
@@ -29,13 +29,13 @@ public class DHDemo {
 	
 	public static void jdkDH() {
 		try {
-			//1.³õÊ¼»¯·¢ËÍ·½ÃÜÔ¿
+			//1.åˆå§‹åŒ–å‘é€æ–¹å¯†é’¥
 			KeyPairGenerator senderKeyPairGenerator = KeyPairGenerator.getInstance("DH");
 			senderKeyPairGenerator.initialize(512);
 			KeyPair senderKeyPair = senderKeyPairGenerator.generateKeyPair();
-			byte[] senderPublicKeyEnc = senderKeyPair.getPublic().getEncoded();//·¢ËÍ·½¹«Ô¿£¬·¢ËÍ¸ø½ÓÊÕ·½£¨ÍøÂç¡¢ÎÄ¼ş¡£¡£¡££©
+			byte[] senderPublicKeyEnc = senderKeyPair.getPublic().getEncoded();//å‘é€æ–¹å…¬é’¥ï¼Œå‘é€ç»™æ¥æ”¶æ–¹ï¼ˆç½‘ç»œã€æ–‡ä»¶ã€‚ã€‚ã€‚ï¼‰
 			
-			//2.³õÊ¼»¯½ÓÊÕ·½ÃÜÔ¿
+			//2.åˆå§‹åŒ–æ¥æ”¶æ–¹å¯†é’¥
 			KeyFactory receiverKeyFactory = KeyFactory.getInstance("DH");
 			X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(senderPublicKeyEnc);
 			PublicKey receiverPublicKey = receiverKeyFactory.generatePublic(x509EncodedKeySpec);
@@ -46,7 +46,7 @@ public class DHDemo {
 			PrivateKey receiverPrivateKey = receiverKeypair.getPrivate();
 			byte[] receiverPublicKeyEnc = receiverKeypair.getPublic().getEncoded();
 			
-			//3.ÃÜÔ¿¹¹½¨
+			//3.å¯†é’¥æ„å»º
 			KeyAgreement receiverKeyAgreement = KeyAgreement.getInstance("DH");
 			receiverKeyAgreement.init(receiverPrivateKey);
 			receiverKeyAgreement.doPhase(receiverPublicKey, true);
@@ -60,16 +60,16 @@ public class DHDemo {
 			senderKeyAgreement.doPhase(senderPublicKey, true);
 			SecretKey senderDesKey = senderKeyAgreement.generateSecret("DES");
 			if (receiverDesKey.equals(senderDesKey)) {
-				System.out.println("Ë«·½ÃÜÔ¿ÏàÍ¬");
+				System.out.println("åŒæ–¹å¯†é’¥ç›¸åŒ");
 			}
 			
-			//4.¼ÓÃÜ
+			//4.åŠ å¯†
 			Cipher cipher = Cipher.getInstance("DES");
 			cipher.init(Cipher.ENCRYPT_MODE, senderDesKey);
 			byte[] result = cipher.doFinal(src.getBytes());
 			System.out.println("jdk dh encrypt : " + Base64.encodeBase64String(result));
 			
-			//5.½âÃÜ
+			//5.è§£å¯†
 			cipher.init(Cipher.DECRYPT_MODE, receiverDesKey);
 			result = cipher.doFinal(result);
 			System.out.println("jdk dh decrypt : " + new String(result));

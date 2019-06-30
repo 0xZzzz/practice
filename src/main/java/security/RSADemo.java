@@ -9,7 +9,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 /**
- * RSAÊı×ÖÇ©Ãû
+ * RSAæ•°å­—ç­¾å
  *
  * @author ZQ
  */
@@ -19,27 +19,27 @@ public class RSADemo {
 
     public static void jdkRsa() {
         try {
-            // ·µ»ØÉú³ÉÖ¸¶¨Ëã·¨µÄ public/private ÃÜÔ¿¶ÔµÄ KeyPairGenerator ¶ÔÏó
+            // è¿”å›ç”ŸæˆæŒ‡å®šç®—æ³•çš„ public/private å¯†é’¥å¯¹çš„ KeyPairGenerator å¯¹è±¡
             KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
             kpg.initialize(512);
             KeyPair keyPair = kpg.generateKeyPair();
-            RSAPublicKey rsaPublicKey = (RSAPublicKey) keyPair.getPublic(); // ¹«Ô¿: ÓÃÓÚÑéÖ¤Ç©Ãû
-            RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) keyPair.getPrivate(); // Ë½Ô¿: ÓÃÓÚÖ´ĞĞÇ©Ãû
+            RSAPublicKey rsaPublicKey = (RSAPublicKey) keyPair.getPublic(); // å…¬é’¥: ç”¨äºéªŒè¯ç­¾å
+            RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) keyPair.getPrivate(); // ç§é’¥: ç”¨äºæ‰§è¡Œç­¾å
 
-            //Ö´ĞĞÇ©Ãû
+            //æ‰§è¡Œç­¾å
             PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(rsaPrivateKey.getEncoded());
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-            PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec); // ¸ù¾İÌá¹©µÄÃÜÔ¿¹æ·¶£¨ÃÜÔ¿²ÄÁÏ£©Éú³ÉË½Ô¿¶ÔÏó¡£
-            Signature signature = Signature.getInstance("MD5withRSA"); // Ìá¹©Ö¸¶¨Êı×ÖÇ©ÃûËã·¨¹¦ÄÜµÄ¶ÔÏó
-            signature.initSign(privateKey); // ³õÊ¼»¯Õâ¸öÓÃÓÚÇ©ÃûµÄ¶ÔÏó¡£
-            signature.update(str.getBytes()); // ¸üĞÂÒªÇ©Ãû»òÑéÖ¤µÄÊı¾İ
-            byte[] result = signature.sign(); // ·µ»ØËùÓĞÒÑ¸üĞÂÊı¾İµÄÇ©Ãû×Ö½Ú¡£
+            PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec); // æ ¹æ®æä¾›çš„å¯†é’¥è§„èŒƒï¼ˆå¯†é’¥ææ–™ï¼‰ç”Ÿæˆç§é’¥å¯¹è±¡ã€‚
+            Signature signature = Signature.getInstance("MD5withRSA"); // æä¾›æŒ‡å®šæ•°å­—ç­¾åç®—æ³•åŠŸèƒ½çš„å¯¹è±¡
+            signature.initSign(privateKey); // åˆå§‹åŒ–è¿™ä¸ªç”¨äºç­¾åçš„å¯¹è±¡ã€‚
+            signature.update(str.getBytes()); // æ›´æ–°è¦ç­¾åæˆ–éªŒè¯çš„æ•°æ®
+            byte[] result = signature.sign(); // è¿”å›æ‰€æœ‰å·²æ›´æ–°æ•°æ®çš„ç­¾åå­—èŠ‚ã€‚
             System.out.println("jdk rsa sign: " + Hex.encodeHexString(result));
 
-            //ÑéÖ¤Ç©Ãû
+            //éªŒè¯ç­¾å
             X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(rsaPublicKey.getEncoded());
-            PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec); // ¸ù¾İÌá¹©µÄÃÜÔ¿¹æ·¶£¨ÃÜÔ¿²ÄÁÏ£©Éú³É¹«Ô¿¶ÔÏó¡£
-            signature.initVerify(publicKey); // ³õÊ¼»¯´ËÓÃÓÚÑéÖ¤µÄ¶ÔÏó¡£
+            PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec); // æ ¹æ®æä¾›çš„å¯†é’¥è§„èŒƒï¼ˆå¯†é’¥ææ–™ï¼‰ç”Ÿæˆå…¬é’¥å¯¹è±¡ã€‚
+            signature.initVerify(publicKey); // åˆå§‹åŒ–æ­¤ç”¨äºéªŒè¯çš„å¯¹è±¡ã€‚
             signature.update(str.getBytes());
             boolean bool = signature.verify(result);
             System.out.println("jdk rsa verify: " + bool);

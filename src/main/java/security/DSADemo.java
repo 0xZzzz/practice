@@ -12,7 +12,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 import org.apache.commons.codec.binary.Hex;
 /**
- * DSA Êı×ÖÇ©Ãû
+ * DSA æ•°å­—ç­¾å
  * @author ZQ
  *
  */
@@ -26,14 +26,14 @@ public class DSADemo {
 	
 	public static void jdkDSA() {
 		try {
-			//1.³õÊ¼»¯ÃÜÔ¿
+			//1.åˆå§‹åŒ–å¯†é’¥
 			KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("DSA");
 			keyPairGenerator.initialize(512);
 			KeyPair keyPair = keyPairGenerator.generateKeyPair();
 			DSAPublicKey dsaPublicKey = (DSAPublicKey) keyPair.getPublic();
 			DSAPrivateKey dsaPrivateKey = (DSAPrivateKey)keyPair.getPrivate();
 			
-			//2.Ö´ĞĞÇ©Ãû
+			//2.æ‰§è¡Œç­¾å
 			PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(dsaPrivateKey.getEncoded());
 			KeyFactory keyFactory = KeyFactory.getInstance("DSA");
 			PrivateKey privateKey = keyFactory.generatePrivate(pkcs8EncodedKeySpec);
@@ -43,7 +43,7 @@ public class DSADemo {
 			byte[] result = signature.sign();
 			System.out.println("jdk dsa sign : " + Hex.encodeHexString(result));
 			
-			//3.ÑéÖ¤Ç©Ãû
+			//3.éªŒè¯ç­¾å
 			X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(dsaPublicKey.getEncoded());
 			keyFactory = KeyFactory.getInstance("DSA");
 			PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec);
