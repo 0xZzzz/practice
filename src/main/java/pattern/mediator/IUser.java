@@ -1,28 +1,28 @@
 package pattern.mediator;
 
 /**
- * ÓÃ»§½Ó¿Ú
+ * ç”¨æˆ·æ¥å£
  *
  * @author 0xZzzz
  */
 public interface IUser {
 
     /**
-     * ·¢ËÍÏûÏ¢
+     * å‘é€æ¶ˆæ¯
      *
-     * @param message ÏûÏ¢ÄÚÈİ
+     * @param message æ¶ˆæ¯å†…å®¹
      */
     void sendMessage(String message);
 
     /**
-     * ½ÓÊÜÏûÏ¢
+     * æ¥å—æ¶ˆæ¯
      *
-     * @param message ÏûÏ¢ÄÚÈİ
+     * @param message æ¶ˆæ¯å†…å®¹
      */
     void receiveMessage(String message);
 
     /**
-     * »ñÈ¡·¢ËÍµÄÏûÏ¢
+     * è·å–å‘é€çš„æ¶ˆæ¯
      */
     String getMessage();
 }

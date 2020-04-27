@@ -1,7 +1,7 @@
 package pattern.mediator;
 
 /**
- * 具体用户A
+ * 鍏蜂綋鐢ㄦ埛A
  *
  * @author 0xZzzz
  */
@@ -9,14 +9,14 @@ public class UserA extends AbstractUser {
 
     public UserA(IMediator mediator, String name) {
         super(mediator, name);
-        //注册到中介者对象中
+        //娉ㄥ唽鍒颁腑浠嬭�呭璞′腑
         mediator.register(this);
     }
 
-    //覆盖接受消息方法
+    //瑕嗙洊鎺ュ彈娑堟伅鏂规硶
     @Override
     public void receiveMessage(String message) {
-        System.out.println(name + "收到消息: " + message);
+        System.out.println(name + "鏀跺埌娑堟伅: " + message);
     }
 
 }

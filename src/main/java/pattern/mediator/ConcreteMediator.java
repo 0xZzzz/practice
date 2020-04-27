@@ -5,16 +5,16 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ÖĞ½éÕßÊµÏÖÀà
+ * ä¸­ä»‹è€…å®ç°ç±»
  *
  * @author 0xZzzz
  */
 public class ConcreteMediator implements IMediator {
 
-    //´æ´¢ËùÓĞµÄ×¢²áµÄÓÃ»§
+    //å­˜å‚¨æ‰€æœ‰çš„æ³¨å†Œçš„ç”¨æˆ·
     private final List<IUser> list = new ArrayList<IUser>();
 
-    //ÊµÏÖ×¢²á·½·¨
+    //å®ç°æ³¨å†Œæ–¹æ³•
     @Override
     public void register(IUser user) {
         if (user != null && !list.contains(user)) {
@@ -22,7 +22,7 @@ public class ConcreteMediator implements IMediator {
         }
     }
 
-    //¸øËùÓĞÈË·¢ËÍÏûÏ¢
+    //ç»™æ‰€æœ‰äººå‘é€æ¶ˆæ¯
     @Override
     public void notifyAll(IUser user) {
         Iterator<IUser> iterator = list.iterator();

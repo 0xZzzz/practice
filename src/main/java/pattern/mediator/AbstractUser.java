@@ -1,17 +1,17 @@
 package pattern.mediator;
 
 /**
- * ÓÃ»§»ùÀà
+ * ç”¨æˆ·åŸºç±»
  */
 public abstract class AbstractUser implements IUser {
 
-    //Î¬»¤ÖĞ½éÕß
+    //ç»´æŠ¤ä¸­ä»‹è€…
     protected IMediator mediator;
 
-    //ĞÕÃû
+    //å§“å
     protected String name;
 
-    //·¢ËÍµÄÏûÏ¢
+    //å‘é€çš„æ¶ˆæ¯
     protected String message;
 
     public AbstractUser(IMediator mediator, String name) {
@@ -19,15 +19,15 @@ public abstract class AbstractUser implements IUser {
         this.name = name;
     }
 
-    //·¢ËÍÏûÏ¢
+    //å‘é€æ¶ˆæ¯
     @Override
     public void sendMessage(String message) {
         this.message = message;
-        System.out.println(name + "Ëµ: " + message);
+        System.out.println(name + "è¯´: " + message);
         mediator.notifyAll(this);
     }
 
-    //·µ»Ø·¢ËÍµÄÏûÏ¢
+    //è¿”å›å‘é€çš„æ¶ˆæ¯
     @Override
     public String getMessage() {
         return message;

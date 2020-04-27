@@ -5,12 +5,12 @@ public class Test {
     public static void main(String[] args) {
         IMediator mediator = new ConcreteMediator();
 
-        IUser userA = new UserA(mediator, "ÓÃ»§A");
-        IUser userB = new UserB(mediator, "ÓÃ»§B");
-        IUser userC = new UserC(mediator, "ÓÃ»§C");
+        IUser userA = new UserA(mediator, "ç”¨æˆ·A");
+        IUser userB = new UserB(mediator, "ç”¨æˆ·B");
+        IUser userC = new UserC(mediator, "ç”¨æˆ·C");
 
-        userA.sendMessage("ÌìÍõ¸ÇµØ»¢");
-        userB.sendMessage("±¦ËşÕòºÓÑı");
+        userA.sendMessage("å¤©ç‹ç›–åœ°è™");
+        userB.sendMessage("å®å¡”é•‡æ²³å¦–");
         userC.sendMessage("...");
 
     }

@@ -1,23 +1,23 @@
 package pattern.mediator;
 
 /**
- * ÖĞ½éÕß½Ó¿Ú
+ * ä¸­ä»‹è€…æ¥å£
  *
  * @author 0xZzzz
  */
 public interface IMediator {
 
     /**
-     * ÓÃ»§×¢²á
+     * ç”¨æˆ·æ³¨å†Œ
      *
-     * @param user ×¢²áµÄÓÃ»§
+     * @param user æ³¨å†Œçš„ç”¨æˆ·
      */
     void register(IUser user);
 
     /**
-     * ·¢ÏûÏ¢Í¨ÖªËùÓĞÈË
+     * å‘æ¶ˆæ¯é€šçŸ¥æ‰€æœ‰äºº
      *
-     * @param user ·¢ËÍÏûÏ¢µÄÈË
+     * @param user å‘é€æ¶ˆæ¯çš„äºº
      */
     void notifyAll(IUser user);
 }
