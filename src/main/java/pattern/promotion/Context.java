@@ -3,27 +3,27 @@ package pattern.promotion;
 import java.math.BigDecimal;
 
 /**
- * ÉÏÏÂÎÄ»·¾³
+ * ä¸Šä¸‹æ–‡ç¯å¢ƒ
  */
 public class Context {
 
-    //±£´æµ±Ç°²ßÂÔ
+    //ä¿å­˜å½“å‰ç­–ç•¥
     private IStrategy strategy;
 
-    //ÉèÖÃ²ßÂÔ
+    //è®¾ç½®ç­–ç•¥
     public void setStrategy(IStrategy strategy) {
         this.strategy = strategy;
     }
 
     /**
-     * Ê¹ÓÃ²ßÂÔ¼ÆËãÊµ¼ÊÏû·ÑµÄ¼Û¸ñ
+     * ä½¿ç”¨ç­–ç•¥è®¡ç®—å®é™…æ¶ˆè´¹çš„ä»·æ ¼
      *
-     * @param consumePrice ÉÌÆ·Ó¦¸¶¼Û¸ñ
+     * @param consumePrice å•†å“åº”ä»˜ä»·æ ¼
      */
     public double cul(double consumePrice) {
-        //Ê¹ÓÃ¾ßÌåÉÌÆ·´ÙÏú²ßÂÔ»ñµÃÊµ¼ÊÏû·Ñ½ğ¶î
+        //ä½¿ç”¨å…·ä½“å•†å“ä¿ƒé”€ç­–ç•¥è·å¾—å®é™…æ¶ˆè´¹é‡‘é¢
         double realPrice = strategy.realPrice(consumePrice);
-        //¸ñÊ½»¯±£ÁôĞ¡ÊıµãºóÒ»Î», ¼´¾«È·µ½½Ç
+        //æ ¼å¼åŒ–ä¿ç•™å°æ•°ç‚¹åä¸€ä½, å³ç²¾ç¡®åˆ°è§’
         BigDecimal bd = new BigDecimal(realPrice);
         bd = bd.setScale(1, BigDecimal.ROUND_DOWN);
         return bd.doubleValue();

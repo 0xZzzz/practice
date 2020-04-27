@@ -7,13 +7,13 @@ public class Test {
     public static void main(String[] args) {
         Context context = new Context();
         Random random = new Random();
-        //Ä£ÄâÊ®´ÎÏû·Ñ
+        //æ¨¡æ‹Ÿåæ¬¡æ¶ˆè´¹
         for (int i = 0; i < 10; i++) {
-            //ÓÃÓÚËæ»ú»ñÈ¡Ò»¸ö´ÙÏú²ßÂÔ
+            //ç”¨äºéšæœºè·å–ä¸€ä¸ªä¿ƒé”€ç­–ç•¥
             int x = random.nextInt(3);
-            //Ïû·Ñ½ğ¶îÓÉËæ»úÊı²úÉú  ²»ÄÜÎª0
+            //æ¶ˆè´¹é‡‘é¢ç”±éšæœºæ•°äº§ç”Ÿ  ä¸èƒ½ä¸º0
             double consumePrice = 0;
-            //Ëæ»ú²úÆ·Ò»¸öÉÌÆ·¼Û¸ñ  Ñ­»·µ½²»µÈÓÚ0ÎªÖ¹
+            //éšæœºäº§å“ä¸€ä¸ªå•†å“ä»·æ ¼  å¾ªç¯åˆ°ä¸ç­‰äº0ä¸ºæ­¢
             while ((consumePrice = random.nextInt(2000)) == 0) {
             }
             switch (x) {
@@ -26,8 +26,8 @@ public class Test {
                 case 2:
                     context.setStrategy(new ReduceStrategy());
             }
-            System.out.print("[" + (x == 0 ? "´ò°ËÕÛ" : (x == 1 ? "¸ßÓÚ200µÄ²¿·Ö´ò°ËÕÛ" : (x == 2 ? "Âú1000¼õ200" : ""))) + "] ÉÌÆ·: ");
-            System.out.println("Ô­¼Û: " + consumePrice + ", ÓÅ»İºóµÄ¼Û¸ñ: " + context.cul(consumePrice));
+            System.out.print("[" + (x == 0 ? "æ‰“å…«æŠ˜" : (x == 1 ? "é«˜äº200çš„éƒ¨åˆ†æ‰“å…«æŠ˜" : (x == 2 ? "æ»¡1000å‡200" : ""))) + "] å•†å“: ");
+            System.out.println("åŸä»·: " + consumePrice + ", ä¼˜æƒ åçš„ä»·æ ¼: " + context.cul(consumePrice));
         }
     }
 

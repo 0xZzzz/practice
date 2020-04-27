@@ -1,13 +1,13 @@
 package pattern.promotion;
 
 /**
- * ²ßÂÔ½Ó¿Ú
+ * ç­–ç•¥æ¥å£
  */
 public interface IStrategy {
 
     /**
-     * @param consumePrice ÉÌÆ·µÄ¼Û¸ñ
-     * @return ÕæÕıÓ¦¸¶µÄ¼Û¸ñ
+     * @param consumePrice å•†å“çš„ä»·æ ¼
+     * @return çœŸæ­£åº”ä»˜çš„ä»·æ ¼
      */
     double realPrice(double consumePrice);
 }

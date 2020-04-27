@@ -1,11 +1,11 @@
 package pattern.promotion;
 
 /**
- * Âú¼õ²ßÂÔ
+ * æ»¡å‡ç­–ç•¥
  */
 public class ReduceStrategy implements IStrategy {
 
-    //Âú1000¼õ200
+    //æ»¡1000å‡200
     @Override
     public double realPrice(double consumePrice) {
         if (consumePrice >= 1000) {

@@ -1,15 +1,15 @@
 package pattern.promotion;
 
 /**
- * ´òÕÛ²ßÂÔ
+ * æ‰“æŠ˜ç­–ç•¥
  */
 public class RebateStrategy implements IStrategy {
 
-    //´òÕÛÂÊ
+    //æ‰“æŠ˜ç‡
     private final double rate;
 
     /**
-     * ¹¹Ôì·½·¨³õÊ¼»¯´òÕÛÂÊ
+     * æ„é€ æ–¹æ³•åˆå§‹åŒ–æ‰“æŠ˜ç‡
      *
      * @param rate
      */
@@ -17,7 +17,7 @@ public class RebateStrategy implements IStrategy {
         this.rate = rate;
     }
 
-    //°ËÕÛ
+    //å…«æŠ˜
     @Override
     public double realPrice(double consumePrice) {
         return this.rate * consumePrice;

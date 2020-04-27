@@ -1,11 +1,11 @@
 package pattern.promotion;
 
 /**
- * 超出部分打折
+ * 瓒呭嚭閮ㄥ垎鎵撴姌
  */
 public class PromotionalStrategy implements IStrategy {
 
-    //超出200的部分打八折
+    //瓒呭嚭200鐨勯儴鍒嗘墦鍏姌
     @Override
     public double realPrice(double consumePrice) {
         if (consumePrice > 200) {
