@@ -1,7 +1,9 @@
 package pattern.visitor;
 
 /**
- * ÆÕÍ¨Ô±¹¤
+ * æ™®é€šå‘˜å·¥
+ *
+ * @author 0xZzzz
  */
 public class Employee extends Staff {
 
@@ -9,22 +11,21 @@ public class Employee extends Staff {
         super(no, name, position, salary);
     }
 
-    //ÆÕÍ¨Ô±¹¤²»ÄÜÌí¼ÓÔ±¹¤ , ¿ÕÊµÏÖ
     @Override
     public void add(Staff staff) {
-        return;
+        // æ™®é€šå‘˜å·¥ä¸èƒ½æ·»åŠ å‘˜å·¥ , ç©ºå®ç°
     }
 
-    //ÆÕÍ¨Ô±¹¤²»ÄÜÉ¾³ıÔ±¹¤, ·µ»Ø¿Õ
     @Override
     public Staff remove(String no) {
+        // æ™®é€šå‘˜å·¥ä¸èƒ½åˆ é™¤å‘˜å·¥, è¿”å›ç©º
         return null;
     }
 
-    //½ÓÊÜ·ÃÎÊÕß¶ÔÏó
     @Override
     public void accept(IVisitor visitor) {
-        //·ÃÎÊ×Ô¼º
+        // æ¥å—è®¿é—®è€…å¯¹è±¡
+        // è®¿é—®è‡ªå·±
         visitor.visit(this);
     }
 

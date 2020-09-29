@@ -25,6 +25,9 @@ public class Demo {
          *      (parameters) -> expression
          *      (parameters) -> { statement; }
          */
+        Demo demo = new Demo();
+        Param1 p = new Param1();
+        p.setIntField(1);
     }
 
     public void demo() {
@@ -99,6 +102,14 @@ public class Demo {
         for (Param param : list) {
             Param1 param1 = paramFunction.apply(param);
         }
+    }
+
+    public static Class<?> test(LambdaGetter func) {
+        System.out.println("传入的实现类：" + func.getImplClass());
+        System.out.println("传入的方法名：" + func.getImplMethodName());
+        System.out.println("传入的参数值：" + func.get());
+        System.out.println("传入数据类型：" + func.get().getClass());
+        return func.get().getClass();
     }
 
 }

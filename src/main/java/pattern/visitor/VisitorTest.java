@@ -1,6 +1,6 @@
 package pattern.visitor;
 
-public class Test {
+public class VisitorTest {
 
     public static void main(String[] args) {
         Manager ceo = new Manager("01", "Ê×Ï¯Ö´ÐÐ¹Ù", "CEO", 0);
