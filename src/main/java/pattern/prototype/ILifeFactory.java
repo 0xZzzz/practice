@@ -1,16 +1,16 @@
 package pattern.prototype;
 
 /**
- * 抽象原型工厂
+ * 鎶借薄鍘熷瀷宸ュ巶
  *
  * @author 0xZzzz
  */
 public interface ILifeFactory {
 
     /**
-     * 生产原型对象
+     * 鐢熶骇鍘熷瀷瀵硅薄
      *
-     * @return 原型对象
+     * @return 鍘熷瀷瀵硅薄
      */
     DayLife newInstance();
 }

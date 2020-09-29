@@ -1,7 +1,7 @@
 package pattern.prototype;
 
 /**
- * Ô­ĞÍ¹¤³§
+ * åŸå‹å·¥å‚
  *
  * @author 0xZzzz
  */
@@ -14,13 +14,13 @@ public class LifeFactoryImpl implements ILifeFactory {
         try {
             if (dayLife == null) {
                 dayLife = new DayLife();
-                dayLife.setGetUp("ÆßµãÆğ´²");
-                dayLife.setByBus("×öµØÌú³ö·¢");
-                dayLife.setBuyFood("¹«Ë¾¸½½üÂòÔç²Í");
-                dayLife.setNoon("ÖĞÎçË¯»á¶ù");
-                dayLife.setAfterNoon("ÏÂÎç¹¤×÷");
-                dayLife.setGoHome("ÏÂ°àÀ²");
-                dayLife.setNight("Ò¹Éú»î¿ªÊ¼");
+                dayLife.setGetUp("ä¸ƒç‚¹èµ·åºŠ");
+                dayLife.setByBus("åšåœ°é“å‡ºå‘");
+                dayLife.setBuyFood("å…¬å¸é™„è¿‘ä¹°æ—©é¤");
+                dayLife.setNoon("ä¸­åˆç¡ä¼šå„¿");
+                dayLife.setAfterNoon("ä¸‹åˆå·¥ä½œ");
+                dayLife.setGoHome("ä¸‹ç­å•¦");
+                dayLife.setNight("å¤œç”Ÿæ´»å¼€å§‹");
                 return dayLife;
             } else {
                 return dayLife.clone();

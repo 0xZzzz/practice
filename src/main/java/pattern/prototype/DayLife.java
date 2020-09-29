@@ -1,44 +1,44 @@
 package pattern.prototype;
 
 /**
- * Ô­ĞÍ¶ÔÏó(Ò»ÌìµÄÉú»î)
+ * åŸå‹å¯¹è±¡(ä¸€å¤©çš„ç”Ÿæ´»)
  *
  * @author 0xZzzz
  */
 public class DayLife implements Cloneable {
 
     /**
-     * Æğ´²
+     * èµ·åºŠ
      */
     private String getUp;
 
     /**
-     * ×ö¹«½»
+     * åšå…¬äº¤
      */
     private String byBus;
 
     /**
-     * ÂòÔç²Í
+     * ä¹°æ—©é¤
      */
     private String buyFood;
 
     /**
-     * ÎçĞİ
+     * åˆä¼‘
      */
     private String noon;
 
     /**
-     * ÏÂÎç¹¤×÷
+     * ä¸‹åˆå·¥ä½œ
      */
     private String afterNoon;
 
     /**
-     * ÏÂ°à»Ø¼Ò
+     * ä¸‹ç­å›å®¶
      */
     private String goHome;
 
     /**
-     * Ò¹¼äÓéÀÖ
+     * å¤œé—´å¨±ä¹
      */
     private String night;
 
@@ -106,7 +106,7 @@ public class DayLife implements Cloneable {
     }
 
     /**
-     * ´òÓ¡¶ÔÏó
+     * æ‰“å°å¯¹è±¡
      */
     public void print() {
         System.out.println(this.toString());

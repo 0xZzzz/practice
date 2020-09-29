@@ -13,7 +13,7 @@ public class VisitorTest {
 
         ceo.accept(new PrintBaseInfoVisitor());
 
-        //扩展一个行为无需修改员工类 只需增加一个访问者即可
+        // 扩展一个行为无需修改员工类 只需增加一个访问者即可
         ISalaryVisitor salaryVisitor = new SalaryVisitor();
         ceo.accept(salaryVisitor);
         salaryVisitor.printEmployeeTotalSalary();
