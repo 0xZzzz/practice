@@ -1,12 +1,13 @@
 package pattern.dynamicProxy;
 
 /**
- * ¾ßÌåµÄ±»´úÀíµÄ¶ÔÏó
+ * å…·ä½“çš„è¢«ä»£ç†çš„å¯¹è±¡
  *
  * @author 0xZzzz
  */
 public class Person implements Subject {
-    private String name;
+
+    private final String name;
 
     public Person(String name) {
         super();
@@ -15,7 +16,7 @@ public class Person implements Subject {
 
     @Override
     public void doSome() {
-        System.out.println(name + "ÕıÔÚ×ö...");
+        System.out.println(name + "æ­£åœ¨åš...");
     }
 
 }

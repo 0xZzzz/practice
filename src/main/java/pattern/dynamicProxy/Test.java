@@ -8,8 +8,8 @@ public class Test {
         Person p = new Person("ZQ");
         DynamicProxy dp = new DynamicProxy(p);
         /*
-		 * Proxy Ìá¹©ÓÃÓÚ´´½¨¶¯Ì¬´úÀíÀàºÍÊµÀıµÄ¾²Ì¬·½·¨, Ëü»¹ÊÇÓÉÕâĞ©·½·¨´´½¨µÄËùÓĞ¶¯Ì¬´úÀíÀàµÄ³¬Àà
-		 * ¶¯Ì¬Éú³É´úÀí¶ÔÏó£¨Àà¼ÓÔØÆ÷£¬±»´úÀí½Ó¿Ú£¬InvocationHandler£©
+		 * Proxy æä¾›ç”¨äºåˆ›å»ºåŠ¨æ€ä»£ç†ç±»å’Œå®ä¾‹çš„é™æ€æ–¹æ³•, å®ƒè¿˜æ˜¯ç”±è¿™äº›æ–¹æ³•åˆ›å»ºçš„æ‰€æœ‰åŠ¨æ€ä»£ç†ç±»çš„è¶…ç±»
+		 * åŠ¨æ€ç”Ÿæˆä»£ç†å¯¹è±¡ï¼ˆç±»åŠ è½½å™¨ï¼Œè¢«ä»£ç†æ¥å£ï¼ŒInvocationHandlerï¼‰
 		 */
         Subject subject = (Subject) Proxy.newProxyInstance(p.getClass().getClassLoader(), p.getClass().getInterfaces(), dp);
         subject.doSome();

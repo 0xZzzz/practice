@@ -1,7 +1,7 @@
 package pattern.dynamicProxy;
 
 /**
- * 被代理的主题接口
+ * 琚唬鐞嗙殑涓婚鎺ュ彛
  *
  * @author 0xZzzz
  */
