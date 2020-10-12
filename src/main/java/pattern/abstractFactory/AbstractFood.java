@@ -1,22 +1,24 @@
 package pattern.abstractFactory;
 
 /**
- * 食物基类
+ * 椋熺墿鍩虹被
+ *
+ * @author 0xZzzz
  */
 public abstract class AbstractFood {
 
     /**
-     * 数量
+     * 鏁伴噺
      */
     private int num;
 
     /**
-     * 种类
+     * 绉嶇被
      */
     private String kind;
 
     /**
-     * 价格
+     * 浠锋牸
      */
     private double price;
 

@@ -1,12 +1,12 @@
 package pattern.abstractFactory;
 
 /**
- * 食物接口
+ * 椋熺墿鎺ュ彛
  */
 public interface IFood {
 
     /**
-     * 打印食物信息
+     * 鎵撳嵃椋熺墿淇℃伅
      */
     void printInfo();
 }

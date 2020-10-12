@@ -1,13 +1,13 @@
 package pattern.abstractFactory;
 
 /**
- * ÒûÁÏ»ùÀà
+ * é¥®æ–™åŸºç±»
  */
 public abstract class Drink extends AbstractFood implements IFood {
 
     @Override
     public void printInfo() {
-        System.out.println(this.getKind() + "·çÎ¶ÒûÁÏ, µ¥¼Û: " + this.getPrice() + "Ôª, ÊıÁ¿: " + this.getNum() + ", ×Ü¼Û: " + this.totalPrice() + "Ôª");
+        System.out.println(this.getKind() + "é£å‘³é¥®æ–™, å•ä»·: " + this.getPrice() + "å…ƒ, æ•°é‡: " + this.getNum() + ", æ€»ä»·: " + this.totalPrice() + "å…ƒ");
     }
 
 }

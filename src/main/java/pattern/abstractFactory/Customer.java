@@ -1,48 +1,48 @@
 package pattern.abstractFactory;
 
 /**
- * Ïû·ÑÕß ¿Í»§
+ * æ¶ˆè´¹è€… å®¢æˆ·
  */
 public class Customer {
 
     private IKFCFactory ikfcFactory;
 
     /**
-     * ¹¹Ôì·½·¨³õÊ¼»¯¹¤³§
+     * æ„é€ æ–¹æ³•åˆå§‹åŒ–å·¥å‚
      *
-     * @param ikfcFactory Ê³Îï¹¤³§
+     * @param ikfcFactory é£Ÿç‰©å·¥å‚
      */
     public Customer(IKFCFactory ikfcFactory) {
         this.ikfcFactory = ikfcFactory;
     }
 
     /**
-     * ¶©¹ºÊ³Îï
+     * è®¢è´­é£Ÿç‰©
      *
-     * @param num ÊıÁ¿
-     * @return ×Ü¼Û
+     * @param num æ•°é‡
+     * @return æ€»ä»·
      */
     public double orderHamburger(int num) {
-        //Éú²úºº±¤
+        //ç”Ÿäº§æ±‰å ¡
         Hamburger hamburger = ikfcFactory.createHamburger(num);
-        //´òÓ¡ÏûÏ¢
+        //æ‰“å°æ¶ˆæ¯
         hamburger.printInfo();
-        //·µ»Ø×Ü¼Û
+        //è¿”å›æ€»ä»·
         return hamburger.totalPrice();
     }
 
     /**
-     * ¶©¹ºÊ³Îï
+     * è®¢è´­é£Ÿç‰©
      *
-     * @param num ÊıÁ¿
-     * @return ×Ü¼Û
+     * @param num æ•°é‡
+     * @return æ€»ä»·
      */
     public double orderDrink(int num) {
-        //Éú²úÒûÁÏ
+        //ç”Ÿäº§é¥®æ–™
         Drink drink = ikfcFactory.createDrink(num);
-        //´òÓ¡ÏûÏ¢
+        //æ‰“å°æ¶ˆæ¯
         drink.printInfo();
-        //·µ»Ø×Ü¼Û
+        //è¿”å›æ€»ä»·
         return drink.totalPrice();
     }
 }

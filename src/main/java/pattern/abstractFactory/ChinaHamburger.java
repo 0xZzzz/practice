@@ -1,17 +1,17 @@
 package pattern.abstractFactory;
 
 /**
- * ¾ßÌåºº±¤Àà
+ * å…·ä½“æ±‰å ¡ç±»
  */
 public class ChinaHamburger extends Hamburger {
 
     /**
-     * ¹¹Ôì·½·¨³õÊ¼»¯Öµ
+     * æ„é€ æ–¹æ³•åˆå§‹åŒ–å€¼
      *
-     * @param num ÊıÁ¿
+     * @param num æ•°é‡
      */
     public ChinaHamburger(int num) {
-        this.setKind("ÂéÀ±");
+        this.setKind("éº»è¾£");
         this.setPrice(5.5);
         this.setNum(num);
     }

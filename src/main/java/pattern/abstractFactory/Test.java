@@ -7,7 +7,7 @@ public class Test {
         Customer customer = new Customer(ikfcFactory);
         double hamburgerPrice = customer.orderHamburger(2);
         double drinkPrice = customer.orderDrink(1);
-        System.out.println("Äã¶©¹ºÊ³ÎïµÄ×Ü¼ÛÎª: " + (hamburgerPrice + drinkPrice));
+        System.out.println("ä½ è®¢è´­é£Ÿç‰©çš„æ€»ä»·ä¸º: " + (hamburgerPrice + drinkPrice));
     }
 
 }
