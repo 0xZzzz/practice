@@ -1,7 +1,7 @@
 package pattern.adapter;
 
 /**
- * µçÔ´AµÄÊÊÅäÆ÷
+ * ç”µæºAçš„é€‚é…å™¨
  *
  * @author 0xZzzz
  */

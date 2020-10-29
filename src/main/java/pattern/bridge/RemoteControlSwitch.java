@@ -1,7 +1,7 @@
 package pattern.bridge;
 
 /**
- * Ô¶³ÌÒ£¿Ø¿ª¹Ø
+ * è¿œç¨‹é¥æ§å¼€å…³
  *
  * @author 0xZzzz
  */
@@ -12,9 +12,9 @@ public class RemoteControlSwitch extends BaseSwitch {
     }
 
     /**
-     * Ô¶³ÌÒ£¿Ø¿ªµÆ
+     * è¿œç¨‹é¥æ§å¼€ç¯
      *
-     * @param openColor ¿ªµÆÑÕÉ«
+     * @param openColor å¼€ç¯é¢œè‰²
      */
     public final void makeRemoteLight(int openColor) {
         this.iLight.electricConnected();
@@ -22,19 +22,19 @@ public class RemoteControlSwitch extends BaseSwitch {
         String color;
         switch (openColor) {
             case 1:
-                color = "Å¯É«";
+                color = "æš–è‰²";
                 break;
             case 2:
-                color = "ÀäÉ«";
+                color = "å†·è‰²";
                 break;
             case 3:
-                color = "ÉîÉ«";
+                color = "æ·±è‰²";
                 break;
             default:
-                color = "Ç³É«";
+                color = "æµ…è‰²";
                 break;
         }
-        System.out.println("µÆµÄÑÕÉ«Îª: " + color);
+        System.out.println("ç¯çš„é¢œè‰²ä¸º: " + color);
         this.iLight.electricClosed();
     }
 }

@@ -1,7 +1,7 @@
 package pattern.bridge;
 
 /**
- * °×³ãµÆ
+ * ç™½ç‚½ç¯
  *
  * @author 0xZzzz
  */
@@ -9,17 +9,17 @@ public class IncandescentLight implements ILight {
 
     @Override
     public void electricConnected() {
-        System.out.println("°×³ãµÆÍ¨µç");
+        System.out.println("ç™½ç‚½ç¯é€šç”µ");
     }
 
     @Override
     public void light() {
-        System.out.println("°×³ãµÆÕÕÃ÷");
+        System.out.println("ç™½ç‚½ç¯ç…§æ˜");
     }
 
     @Override
     public void electricClosed() {
-        System.out.println("°×³ãµÆ¶Ïµç");
+        System.out.println("ç™½ç‚½ç¯æ–­ç”µ");
     }
 
 }

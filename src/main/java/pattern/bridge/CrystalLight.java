@@ -1,7 +1,7 @@
 package pattern.bridge;
 
 /**
- * Ë®¾§µÆ
+ * æ°´æ™¶ç¯
  *
  * @author 0xZzzz
  */
@@ -9,17 +9,17 @@ public class CrystalLight implements ILight {
 
     @Override
     public void electricConnected() {
-        System.out.println("Ë®¾§µÆÍ¨µç");
+        System.out.println("æ°´æ™¶ç¯é€šç”µ");
     }
 
     @Override
     public void light() {
-        System.out.println("Ë®¾§µÆÕÕÃ÷");
+        System.out.println("æ°´æ™¶ç¯ç…§æ˜");
     }
 
     @Override
     public void electricClosed() {
-        System.out.println("Ë®¾§µÆ¶Ïµç");
+        System.out.println("æ°´æ™¶ç¯æ–­ç”µ");
     }
 
 }

@@ -1,24 +1,24 @@
 package pattern.bridge;
 
 /**
- * 抽象点灯接口
+ * 鎶借薄鐐圭伅鎺ュ彛
  *
  * @author 0xZzzz
  */
 public interface ILight {
 
     /**
-     * 电源连接
+     * 鐢垫簮杩炴帴
      */
     void electricConnected();
 
     /**
-     * 照明
+     * 鐓ф槑
      */
     void light();
 
     /**
-     * 关闭
+     * 鍏抽棴
      */
     void electricClosed();
 }

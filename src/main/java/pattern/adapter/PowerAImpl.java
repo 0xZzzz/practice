@@ -4,7 +4,7 @@ public class PowerAImpl implements PowerA {
 
     @Override
     public void insert() {
-        System.out.println("µçÔ´AÒÑ¾­²åÈë, ¿ÉÒÔ¿ªÊ¼¹¤×÷...");
+        System.out.println("ç”µæºAå·²ç»æ’å…¥, å¯ä»¥å¼€å§‹å·¥ä½œ...");
     }
 
 }

@@ -4,7 +4,7 @@ public class PowerBImpl implements PowerB {
 
     @Override
     public void connect() {
-        System.out.println("µçÔ´BÒÑ¾­Á¬½Ó, ¿ÉÒÔ¿ªÊ¼¹¤×÷...");
+        System.out.println("ç”µæºBå·²ç»è¿æ¥, å¯ä»¥å¼€å§‹å·¥ä½œ...");
     }
 
 }

@@ -1,7 +1,7 @@
 package pattern.bridge;
 
 /**
- * ¿ª¹Ø»ùÀà
+ * å¼€å…³åŸºç±»
  *
  * @author 0xZzzz
  */
@@ -14,7 +14,7 @@ public class BaseSwitch {
     }
 
     /**
-     * ¿ªµÆ
+     * å¼€ç¯
      */
     public final void makeLight() {
         this.iLight.electricConnected();
