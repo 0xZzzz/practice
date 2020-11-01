@@ -1,29 +1,29 @@
 package pattern.composite;
 
 /**
- * 员工基类
+ * 鍛樺伐鍩虹被
  *
  * @author 0xZzzz
  */
 public abstract class Staff {
 
     /**
-     * 员工编号
+     * 鍛樺伐缂栧彿
      */
     protected String no;
 
     /**
-     * 员工姓名
+     * 鍛樺伐濮撳悕
      */
     protected String name;
 
     /**
-     * 员工职位
+     * 鍛樺伐鑱屼綅
      */
     protected String position;
 
     /**
-     * 员工薪水
+     * 鍛樺伐钖按
      */
     protected double salary;
 
@@ -73,14 +73,14 @@ public abstract class Staff {
     }
 
     /**
-     * 打印信息
+     * 鎵撳嵃淇℃伅
      */
     public void printBasicInfo() {
         System.out.println(this.toString());
     }
 
     /**
-     * 打印手下员工信息
+     * 鎵撳嵃鎵嬩笅鍛樺伐淇℃伅
      */
     public abstract void printEmployeesInfo();
 

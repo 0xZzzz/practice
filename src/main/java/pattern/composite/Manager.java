@@ -11,16 +11,16 @@ public class Manager extends Staff {
     }
 
     /**
-     * 添加员工
+     * 娣诲姞鍛樺伐
      *
-     * @param staff 员工对象
+     * @param staff 鍛樺伐瀵硅薄
      */
     public void add(Staff staff) {
         staffList.add(staff);
     }
 
     /**
-     * 根据工号移除某个员工
+     * 鏍规嵁宸ュ彿绉婚櫎鏌愪釜鍛樺伐
      */
     public Staff remove(String no) {
         Staff staff = null;

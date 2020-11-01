@@ -3,10 +3,10 @@ package pattern.composite;
 public class Test {
 
     public static void main(String[] args) {
-        Manager ceo = new Manager("01", "Ê×Ï¯Ö´ĞĞ¹Ù", "CEO", 0);
-        Manager cto = new Manager("02", "Ê×Ï¯¼¼Êõ¹Ù", "CTO", 0);
-        Manager tManager = new Manager("02001", "¼¼Êõ¾­Àí", "¼¼Êõ¾­Àí", 30000);
-        Employee emp = new Employee("02001001", "³ÌĞòÔ³", "³ÌĞòÔ³", 10000);
+        Manager ceo = new Manager("01", "é¦–å¸­æ‰§è¡Œå®˜", "CEO", 0);
+        Manager cto = new Manager("02", "é¦–å¸­æŠ€æœ¯å®˜", "CTO", 0);
+        Manager tManager = new Manager("02001", "æŠ€æœ¯ç»ç†", "æŠ€æœ¯ç»ç†", 30000);
+        Employee emp = new Employee("02001001", "ç¨‹åºçŒ¿", "ç¨‹åºçŒ¿", 10000);
         cto.add(tManager);
         ceo.add(cto);
         tManager.add(emp);
