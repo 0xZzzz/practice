@@ -1,22 +1,44 @@
 package pattern.observer;
 
 /**
- * Ö÷Ìâ½Ó¿Ú ±»¹Û²ìÕß
+ * ä¸»é¢˜æ¥å£ è¢«è§‚å¯Ÿè€…
+ *
+ * @author 0xZzzz
  */
 public interface ISubject {
 
-    //Ìí¼Ó¹Û²ìÕß
+    /**
+     * æ·»åŠ è§‚å¯Ÿè€…
+     *
+     * @param observer è§‚å¯Ÿè€…å®ä¾‹
+     * @return æ˜¯å¦æ·»åŠ æˆåŠŸ
+     */
     boolean add(IObserver observer);
 
-    //É¾³ı¹Û²ìÕß
+    /**
+     * ç§»é™¤è§‚å¯Ÿè€…
+     *
+     * @param observer è§‚å¯Ÿè€…å®ä¾‹
+     * @return æ˜¯å¦ç§»é™¤æˆåŠŸ
+     */
     boolean remove(IObserver observer);
 
-    //Í¨ÖªËùÓĞ¹Û²ìÕß
+    /**
+     * é€šçŸ¥æ‰€æœ‰è§‚å¯Ÿè€…
+     */
     void notifyAllObserver();
 
-    //ÉèÖÃÎÂ¶È
+    /**
+     * è®¾ç½®æ¸©åº¦
+     *
+     * @param temperature æ¸©åº¦å€¼
+     */
     void setTemperature(float temperature);
 
-    //»ñµÃÎÂ¶ÈÔ¤¾¯
+    /**
+     * è·å¾—æ¸©åº¦é¢„è­¦
+     *
+     * @return æ¸©åº¦é¢„è­¦æ–‡æ¡ˆ
+     */
     String temperatureReport();
 }

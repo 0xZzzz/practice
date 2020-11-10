@@ -1,28 +1,33 @@
 package pattern.observer;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 /**
- * ¾ßÌåµÄ±»¹Û²ìÕß
+ * å…·ä½“çš„è¢«è§‚å¯Ÿè€…
+ *
+ * @author 0xZzzz
  */
 public class Subject implements ISubject {
 
-    //ÎÂ¶È
+    /**
+     * æ¸©åº¦
+     */
     private float temperature;
 
-    //Ô¤¾¯¼¶±ğ
+    /**
+     * é¢„è­¦çº§åˆ«
+     */
     private String warningLevel;
 
-    //±£´æ¹Û²ìÕßÁĞ±í
-    private Vector<IObserver> vector;
+    /**
+     * ä¿å­˜è§‚å¯Ÿè€…åˆ—è¡¨
+     */
+    private final Vector<IObserver> vector;
 
-    //¹¹Ôì·½·¨³õÊ¼»¯¹Û²ìÕßÁĞ±í
     public Subject() {
-        vector = new Vector<IObserver>();
+        vector = new Vector<>();
     }
 
-    //Ôö¼Ó¹Û²ìÕß
     @Override
     public boolean add(IObserver observer) {
         if (observer != null && !vector.contains(observer)) {
@@ -31,50 +36,45 @@ public class Subject implements ISubject {
         return false;
     }
 
-    //ÒÆ³ı¹Û²ìÕß
     @Override
     public boolean remove(IObserver observer) {
         return vector.remove(observer);
     }
 
-    //Í¨ÖªËùÓĞ¹Û²ìÕß
     @Override
     public void notifyAllObserver() {
-        System.out.println("ÆøÏóÌ¨·¢²¼" + this.warningLevel + "¾¯±¨!");
-        Iterator<IObserver> iterator = vector.iterator();
-        while (iterator.hasNext()) {
-            iterator.next().update(this);
+        System.out.println("æ°”è±¡å°å‘å¸ƒ" + this.warningLevel + "è­¦æŠ¥!");
+        for (IObserver iObserver : vector) {
+            iObserver.update(this);
         }
     }
 
     /**
-     * Ë½ÓĞ·½·¨, ¸ù¾İÎÂ¶ÈÉèÖÃÔ¤¾¯¼¶±ğ, È»ºóÍ¨ÖªËùÓĞ¹Û²ìÕß
+     * ç§æœ‰æ–¹æ³•, æ ¹æ®æ¸©åº¦è®¾ç½®é¢„è­¦çº§åˆ«, ç„¶åé€šçŸ¥æ‰€æœ‰è§‚å¯Ÿè€…
      */
     private void invoke() {
         if (this.temperature >= 35) {
             if (this.temperature >= 35 && this.temperature < 37) {
-                this.warningLevel = "»ÆÉ«";
+                this.warningLevel = "é»„è‰²";
             } else if (this.temperature >= 37 && this.temperature < 40) {
-                this.warningLevel = "³ÈÉ«";
+                this.warningLevel = "æ©™è‰²";
             } else if (this.temperature >= 40) {
-                this.warningLevel = "ºìÉ«";
+                this.warningLevel = "çº¢è‰²";
             }
-            //Í¨ÖªËùÓĞ¹Û²ìÕßÎÂ¶ÈÇé¿ö
+            //é€šçŸ¥æ‰€æœ‰è§‚å¯Ÿè€…æ¸©åº¦æƒ…å†µ
             this.notifyAllObserver();
         }
     }
 
-    //ÉèÖÃÎÂ¶ÈÖµ
     @Override
     public void setTemperature(float temperature) {
         this.temperature = temperature;
         this.invoke();
     }
 
-    //»ñÈ¡ÎÂ¶ÈÓï¾³
     @Override
     public String temperatureReport() {
-        return "ÎÂ¶È: " + this.temperature;
+        return "æ¸©åº¦: " + this.temperature;
     }
 
 }

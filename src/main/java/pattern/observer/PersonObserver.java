@@ -1,13 +1,15 @@
 package pattern.observer;
 
 /**
- * ¾ßÌåµÄ¹Û²ìÕß ¸öÈËÓÃ»§
+ * å…·ä½“çš„è§‚å¯Ÿè€… ä¸ªäººç”¨æˆ·
+ *
+ * @author 0xZzzz
  */
 public class PersonObserver implements IObserver {
 
     @Override
     public void update(ISubject subject) {
-        System.out.println("¸öÈËÊÜµ½¸ßÎÂÔ¤¾¯: " + subject.temperatureReport());
+        System.out.println("ä¸ªäººå—åˆ°é«˜æ¸©é¢„è­¦: " + subject.temperatureReport());
     }
 
 }
