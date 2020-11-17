@@ -1,36 +1,58 @@
 package enumeration;
+
 /**
- * ½»Í¨µÆÃ¶¾Ù
- * @author 69953213
+ * äº¤é€šç¯æšä¸¾
  *
+ * @author 0xZzzz
  */
 public enum TrafficLightEnum {
-	RED(30){
-		@Override
-		public TrafficLightEnum next() {
-			return GREEN;
-		}
-	}, 
-	GREEN(30){
-		@Override
-		public TrafficLightEnum next() {
-			return YELLOW;
-		}
-	}, 
-	YELLOW(5){
-		@Override
-		public TrafficLightEnum next() {
-			return RED;
-		}
-	};
-	//ÏÂÒ»¸öµÆ
-	public abstract TrafficLightEnum next();
-	
-	/** ½»Í¨µÆÊ±¼ä */
-	private int time;
-	
-	/** Ë½ÓĞµÄ´ø²ÎÊıµÄ¹¹Ôì·½·¨ */
-	private TrafficLightEnum(int time){
-		this.time = time;
-	}
+
+    /**
+     * çº¢ç¯
+     */
+    RED(30) {
+        @Override
+        public TrafficLightEnum next() {
+            return GREEN;
+        }
+    },
+
+    /**
+     * é»„ç¯
+     */
+    GREEN(30) {
+        @Override
+        public TrafficLightEnum next() {
+            return YELLOW;
+        }
+    },
+
+    /**
+     * çº¢ç¯
+     */
+    YELLOW(5) {
+        @Override
+        public TrafficLightEnum next() {
+            return RED;
+        }
+    };
+
+    /**
+     * ä¸‹ä¸€ä¸ªç¯
+     *
+     * @return next light enum
+     */
+    public abstract TrafficLightEnum next();
+
+    /**
+     * äº¤é€šç¯æ—¶é—´
+     */
+    private int time;
+
+    /**
+     * ç§æœ‰çš„å¸¦å‚æ•°çš„æ„é€ æ–¹æ³•
+     */
+    TrafficLightEnum(int time) {
+        this.time = time;
+    }
 }

@@ -1,33 +1,47 @@
 package enumeration;
+
 /**
- * javaÆÕÍ¨ÀàÄ£ÄâÊµÏÖÃ¶¾Ù
- * @author 69953213
+ * javaæ™®é€šç±»æ¨¡æ‹Ÿå®ç°æšä¸¾
  *
+ * @author 0xZzzz
  */
 public abstract class SimulateSexEnum {
-	/** ¹¹Ôì·½·¨Ë½ÓĞ»¯ */
-	private SimulateSexEnum(){}
-	
-	/** ÔËÓÃÕâÖÖÄÚ²¿ÀàµÄÊµÏÖ·½Ê½¿ÉÒÔ¼õÉÙºÜ¶àifÅĞ¶Ï */
-	public static final SimulateSexEnum MALE = new SimulateSexEnum() {
-		@Override
-		protected SimulateSexEnum negation() {
-			return FEMALE;
-		}
-		
-	};
-	//Å®ĞÔ
-	public static final SimulateSexEnum FEMALE = new SimulateSexEnum() {
-		@Override
-		protected SimulateSexEnum negation() {
-			return MALE;
-		}
-	};
-	/** È¡·´ */
-	protected abstract SimulateSexEnum negation();
-	
-	@Override
-	public String toString(){
-		return this == MALE? "MALE" : "FEMALE";
-	}
+    /**
+     * æ„é€ æ–¹æ³•ç§æœ‰åŒ–
+     */
+    private SimulateSexEnum() {
+    }
+
+    /**
+     * è¿ç”¨è¿™ç§å†…éƒ¨ç±»çš„å®ç°æ–¹å¼å¯ä»¥å‡å°‘å¾ˆå¤šifåˆ¤æ–­
+     */
+    public static final SimulateSexEnum MALE = new SimulateSexEnum() {
+        @Override
+        protected SimulateSexEnum negation() {
+            return FEMALE;
+        }
+
+    };
+
+    /**
+     * å¥³æ€§
+     */
+    public static final SimulateSexEnum FEMALE = new SimulateSexEnum() {
+        @Override
+        protected SimulateSexEnum negation() {
+            return MALE;
+        }
+    };
+
+    /**
+     * å–å
+     *
+     * @return å–ååçš„æšä¸¾
+     */
+    protected abstract SimulateSexEnum negation();
+
+    @Override
+    public String toString() {
+        return this == MALE ? "MALE" : "FEMALE";
+    }
 }

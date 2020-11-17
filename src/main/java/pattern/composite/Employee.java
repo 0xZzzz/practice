@@ -8,7 +8,7 @@ public class Employee extends Staff {
 
     @Override
     public void printEmployeesInfo() {
-        return;
+
     }
 
 }
