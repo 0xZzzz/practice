@@ -7,6 +7,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * lru缓存
+ *
+ * @author 0xZzzz
  */
 public class LruCache<K, V> extends LinkedHashMap<K, V> {
 
@@ -18,7 +20,7 @@ public class LruCache<K, V> extends LinkedHashMap<K, V> {
 
     private static final int DEFAULT_INIT_CAPACITY = 16;
 
-    private ReadWriteLock lock = new ReentrantReadWriteLock();
+    private final ReadWriteLock lock = new ReentrantReadWriteLock();
 
     /** 缓存容量 */
     private volatile int maxCapacity;
@@ -84,7 +86,8 @@ public class LruCache<K, V> extends LinkedHashMap<K, V> {
 
     @Override
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-        return size() > maxCapacity; //元素个数大于容量则移除最老的元素
+        // 元素个数大于容量则移除最老的元素
+        return size() > maxCapacity;
     }
 
     public void setMaxCapacity(int maxCapacity) {

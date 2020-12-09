@@ -1,16 +1,16 @@
 package pattern.command;
 
 /**
- * ½ÓÊÜÕß½Ó¿Ú
+ * æ¥å—è€…æ¥å£
  *
  * @author 0xZzzz
  */
 public interface IReceiver {
 
     /**
-     * ½ÓÊÜÏûÏ¢
+     * æ¥å—æ¶ˆæ¯
      *
-     * @param mail ÏûÏ¢ÄÚÈİ
+     * @param mail æ¶ˆæ¯å†…å®¹
      */
     void receiveMail(String mail);
 }

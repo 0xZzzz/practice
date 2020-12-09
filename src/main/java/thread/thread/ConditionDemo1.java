@@ -14,19 +14,25 @@ public class ConditionDemo1 {
 
     public static void main(String[] args) {
         Loop loop = new Loop();
-        new Thread(() -> loop.one()).start();
-        new Thread(() -> loop.two()).start();
-        new Thread(() -> loop.three()).start();
+        new Thread(loop::one).start();
+        new Thread(loop::two).start();
+        new Thread(loop::three).start();
     }
 
     static class Loop {
-        private ReentrantLock lock = new ReentrantLock();
-        private Condition condition1 = lock.newCondition();
-        private Condition condition2 = lock.newCondition();
-        private Condition condition3 = lock.newCondition();
+        private final ReentrantLock lock = new ReentrantLock();
+        private final Condition condition1 = lock.newCondition();
+        private final Condition condition2 = lock.newCondition();
+        private final Condition condition3 = lock.newCondition();
 
+        /**
+         * 当前打印的数字
+         */
         private int i = 0;
 
+        /**
+         * 标识应该轮到几号线程执行
+         */
         private int index = 1;
 
         public void one() {

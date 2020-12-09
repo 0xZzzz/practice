@@ -1,13 +1,13 @@
 package pattern.command;
 
 /**
- * ¾ßÌåµÄ½ÓÊÜÕßÀà
+ * å…·ä½“çš„æ¥å—è€…ç±»
  */
 public class Receiver implements IReceiver {
 
     @Override
     public void receiveMail(String mail) {
-        System.out.println("½ÓÊÜÕß½ÓÊÜÓÊ¼ş: " + mail);
+        System.out.println("æ¥å—è€…æ¥å—é‚®ä»¶: " + mail);
     }
 
 }
