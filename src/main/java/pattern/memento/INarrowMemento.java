@@ -1,7 +1,9 @@
 package pattern.memento;
 
 /**
- * ����¼խ�ӿ�(���ṩ�κη���, �ⲿ�����ܷ��ʱ���¼�����ڲ���Ϣ)
+ * 备忘录窄接口(不提供任何方法, 外部对象不能访问备忘录对象内部信息)
+ *
+ * @author 0xZzzz
  */
 public interface INarrowMemento {
 

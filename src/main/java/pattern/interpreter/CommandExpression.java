@@ -1,5 +1,8 @@
 package pattern.interpreter;
 
+/**
+ * @author 0xZzzz
+ */
 public class CommandExpression implements IExpression {
 
     private final Context context;
@@ -7,7 +10,7 @@ public class CommandExpression implements IExpression {
     private IExpression expression;
 
     /**
-     * ¹¹Ôì·½·¨½«´ı½âÎöµÄcontext´«Èë
+     * æ„é€ æ–¹æ³•å°†å¾…è§£æçš„contextä¼ å…¥
      */
     public CommandExpression(Context context) {
         this.context = context;
@@ -16,17 +19,16 @@ public class CommandExpression implements IExpression {
 
     @Override
     public void parse(Context context) {
-        //ÅĞ¶Ïµ±Ç°ÃüÁîÀà±ğ, ÔÚ´ËÖ»¶ÔForºÍ×îÔ­Ê¼ÃüÁî½øĞĞÇø·Ö
+        // åˆ¤æ–­å½“å‰å‘½ä»¤ç±»åˆ«, åœ¨æ­¤åªå¯¹ For å’Œæœ€åŸå§‹å‘½ä»¤è¿›è¡ŒåŒºåˆ†
         if (this.context.equalsWithCommand("FOR")) {
-            //´´½¨FOR±í´ïÊ½½øĞĞ½âÎö
+            // åˆ›å»ºFORè¡¨è¾¾å¼è¿›è¡Œè§£æ
             expression = new ForExpression(this.context);
         } else {
-            //´´½¨Ô­Ê¼ÃüÁî±í´ïÊ½½øĞĞÄÚÈİ½âÎö
+            // åˆ›å»ºåŸå§‹å‘½ä»¤è¡¨è¾¾å¼è¿›è¡Œå†…å®¹è§£æ
             expression = new PrimitiveExpression(this.context);
         }
     }
 
-    //½âÎöÄÚÈİ
     @Override
     public void interpret() {
         this.expression.interpret();

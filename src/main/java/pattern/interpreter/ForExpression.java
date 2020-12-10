@@ -1,7 +1,7 @@
 package pattern.interpreter;
 
 /**
- * FOR±í´ïÊ½
+ * FORè¡¨è¾¾å¼
  *
  * @author 0xZzzz
  */
@@ -9,19 +9,25 @@ public class ForExpression implements IExpression {
 
     private final Context context;
 
-    //´æ´¢µ±Ç°Ë÷ÒıµÄkeyÖµ
+    /**
+     * å­˜å‚¨å½“å‰ç´¢å¼•çš„keyå€¼
+     */
     private String variable;
 
-    //´æ´¢Ñ­»·ÆğÊ¼Î»ÖÃ
+    /**
+     * å­˜å‚¨å¾ªç¯èµ·å§‹ä½ç½®
+     */
     private int startIndex;
 
-    //´æ´¢Ñ­»·½áÊøÎ»ÖÃ
+    /**
+     * å­˜å‚¨å¾ªç¯ç»“æŸä½ç½®
+     */
     private int endIndex;
 
     private IExpression expression;
 
     /**
-     * ¹¹Ôì·½·¨½«´ı½âÎöµÄcontext´«Èë
+     * æ„é€ æ–¹æ³•å°†å¾…è§£æçš„contextä¼ å…¥
      */
     public ForExpression(Context context) {
         this.context = context;
@@ -30,11 +36,11 @@ public class ForExpression implements IExpression {
 
     @Override
     public void parse(Context context) {
-        //Ê×ÏÈ»ñÈ¡µ±Ç°½Úµã
+        // é¦–å…ˆè·å–å½“å‰èŠ‚ç‚¹
         this.context.next();
         while (true) {
             if (this.context.equalsWithCommand("FROM")) {
-                //ÕâÊÇ¿ªÊ¼Ë÷ÒıÄÚÈİ
+                // è¿™æ˜¯å¼€å§‹ç´¢å¼•å†…å®¹
                 String nextStr = this.context.next();
                 try {
                     this.startIndex = Integer.parseInt(nextStr);
@@ -42,10 +48,10 @@ public class ForExpression implements IExpression {
                     System.out.println("error: after 'FROM' expression exist error! please check the format of expression is correct!");
                     break;
                 }
-                //»ñÈ¡ÏÂÒ»¸ö½Úµã
+                // è·å–ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
                 this.context.next();
             } else if (this.context.equalsWithCommand("TO")) {
-                //ÉèÖÃË÷Òı½áÊøÄÚÈİ
+                // è®¾ç½®ç´¢å¼•ç»“æŸå†…å®¹
                 String nextStr = this.context.next();
                 try {
                     this.endIndex = Integer.parseInt(nextStr);
@@ -55,29 +61,28 @@ public class ForExpression implements IExpression {
                 this.context.next();
                 break;
             } else {
-                //ÉèÖÃµ±Ç°Ë÷ÒıµÄ±äÁ¿ÄÚÈİ
+                // è®¾ç½®å½“å‰ç´¢å¼•çš„å˜é‡å†…å®¹
                 if (this.variable == null) {
                     this.variable = this.context.getCurrentToken();
                 }
-                //ºóÈ¥ÏÂÒ»¸ö½Úµã
+                // åå»ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
                 this.context.next();
             }
         }
-        //½¨Á¢ÁĞ±í±í´ïÊ½
+        // å»ºç«‹åˆ—è¡¨è¡¨è¾¾å¼
         this.expression = new ListExpression();
         this.expression.parse(context);
     }
 
-    //ÊµÏÖ½âÊÍ·½·¨
     @Override
     public void interpret() {
         for (int x = this.startIndex; x < this.endIndex; x++) {
-            //ÉèÖÃ±äÁ¿ÄÚÈİ
+            // è®¾ç½®å˜é‡å†…å®¹
             this.context.put("" + this.variable, x);
-            //Ö´ĞĞ½âÊÍ·½·¨
+            // æ‰§è¡Œè§£é‡Šæ–¹æ³•
             this.expression.interpret();
         }
-        //ÒÆ³ıÊ¹ÓÃµÄÁÙÊ±±äÁ¿ÄÚÈİ
+        // ç§»é™¤ä½¿ç”¨çš„ä¸´æ—¶å˜é‡å†…å®¹
         this.context.clear("" + this.variable);
     }
 

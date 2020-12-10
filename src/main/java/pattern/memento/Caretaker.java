@@ -1,7 +1,9 @@
 package pattern.memento;
 
 /**
- * ±¸ÍüÂ¼¹ÜÀíÕß(Ö»½ÓÊÜ±¸ÍüÂ¼Õ­½Ó¿Ú)
+ * å¤‡å¿˜å½•ç®¡ç†è€…(åªæ¥å—å¤‡å¿˜å½•çª„æ¥å£)
+ *
+ * @author 0xZzzz
  */
 public class Caretaker {
 

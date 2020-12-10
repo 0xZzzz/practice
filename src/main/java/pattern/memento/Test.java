@@ -1,33 +1,36 @@
 package pattern.memento;
 
+/**
+ * @author 0xZzzz
+ */
 public class Test {
 
     public static void main(String[] args) {
-        //´´½¨½ÇÉ«
+        // åˆ›å»ºè§’è‰²
         Hero hero = new Hero();
-        //´´½¨¹ÜÀíÕß
+        // åˆ›å»ºç®¡ç†è€…
         Caretaker caretaker = new Caretaker();
-        //±£´æÌôÕ½Ç°Ó¢ĞÛµÄ×´Ì¬
+        // ä¿å­˜æŒ‘æˆ˜å‰è‹±é›„çš„çŠ¶æ€
         caretaker.setMemento(hero.createMemento());
-        //ÓĞÈı´ÎÌôÕ½bossµÄ»ú»á
+        // æœ‰ä¸‰æ¬¡æŒ‘æˆ˜bossçš„æœºä¼š
         int cnt = 1;
-        //±£´æÌôÕ½bossµÄ½á¹û
+        // ä¿å­˜æŒ‘æˆ˜bossçš„ç»“æœ
         int ko = -1;
         while (ko != 1 && cnt <= 3) {
-            System.out.println("µÚ" + cnt + "´ÎÌôÕ½¿ªÊ¼...");
-            //¿ªÊ¼ÌôÕ½boss
+            System.out.println("ç¬¬" + cnt + "æ¬¡æŒ‘æˆ˜å¼€å§‹...");
+            // å¼€å§‹æŒ‘æˆ˜boss
             ko = hero.koBoss();
             while (true) {
                 if (ko == -1) {
-                    //ÌôÕ½Ê§°Ü, ´Ó±¸ÍüÂ¼¹ÜÀíÕßÖĞ»Ö¸´±¸ÍüÂ¼µÄ×´Ì¬, ÀÛ¼ÓÌôÕ½´ÎÊı
+                    // æŒ‘æˆ˜å¤±è´¥, ä»å¤‡å¿˜å½•ç®¡ç†è€…ä¸­æ¢å¤å¤‡å¿˜å½•çš„çŠ¶æ€, ç´¯åŠ æŒ‘æˆ˜æ¬¡æ•°
                     hero.restoreFromMemento(caretaker.getMemento());
                     cnt += 1;
                     break;
                 } else if (ko == 0) {
-                    //¼ÌĞøÌôÕ½
+                    // ç»§ç»­æŒ‘æˆ˜
                     ko = hero.koBoss();
                 } else if (ko == 1) {
-                    //ÌôÕ½³É¹¦
+                    // æŒ‘æˆ˜æˆåŠŸ
                     break;
                 }
             }

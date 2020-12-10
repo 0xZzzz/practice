@@ -1,25 +1,31 @@
 package pattern.interpreter;
 
 /**
- * Ö÷±í´ïÊ½
+ * ä¸»è¡¨è¾¾å¼
  *
  * @author 0xZzzz
  */
 public class ProgramExpression implements IExpression {
 
-    //ÉÏÏÂÎÄ»·¾³
+    /**
+     * ä¸Šä¸‹æ–‡ç¯å¢ƒ
+     */
     private final Context context;
 
-    //µ±Ç°ÃüÁî
+    /**
+     * å½“å‰å‘½ä»¤
+     */
     private static final String COMMAND = "PROGRAM";
 
-    //ÏÂÒ»¸ö±í´ïÊ½
+    /**
+     * ä¸‹ä¸€ä¸ªè¡¨è¾¾å¼
+     */
     private IExpression expression;
 
     /**
-     * ¹¹Ôì·½·¨½«´ø½âÎöµÄÄÚÈİ´«Èë
+     * æ„é€ æ–¹æ³•å°†å¸¦è§£æçš„å†…å®¹ä¼ å…¥
      *
-     * @param text ÃüÁî
+     * @param text å‘½ä»¤
      */
     public ProgramExpression(String text) {
         this.context = new Context(text);
@@ -28,21 +34,20 @@ public class ProgramExpression implements IExpression {
 
     @Override
     public void parse(Context context) {
-        //»ñÈ¡µÚÒ»¸öÃüÁîµÄ½Úµã
+        // è·å–ç¬¬ä¸€ä¸ªå‘½ä»¤çš„èŠ‚ç‚¹
         this.context.next();
     }
 
-    //ÊµÏÖ½âÊÍ·½·¨
     @Override
     public void interpret() {
-        //ÅĞ¶ÏÊÇ·ñÒÔprogram¿ªÊ¼
+        // åˆ¤æ–­æ˜¯å¦ä»¥ program å¼€å§‹
         if (!this.context.equalsWithCommand(COMMAND)) {
             System.out.println("the '" + COMMAND + "' is expected for start");
         } else {
             this.context.next();
             this.expression = new ListExpression();
             this.expression.parse(context);
-            //ListExpression±í´ïÊ½¿ªÊ¼½âÎö
+            // ListExpression è¡¨è¾¾å¼å¼€å§‹è§£æ
             this.expression.interpret();
         }
     }

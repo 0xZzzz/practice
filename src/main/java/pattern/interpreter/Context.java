@@ -6,30 +6,38 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
- * ´´½¨ÉÏÏÂÎÄ»·¾³
+ * åˆ›å»ºä¸Šä¸‹æ–‡ç¯å¢ƒ
+ *
+ * @author 0xZzzz
  */
 public class Context {
 
-    //´ı½âÎöµÄÎÄ±¾ÄÚÈİ
+    /**
+     * å¾…è§£æçš„æ–‡æœ¬å†…å®¹
+     */
     private final StringTokenizer stringTokenizer;
 
-    //µ±Ç°ÃüÁî
+    /**
+     * å½“å‰å‘½ä»¤
+     */
     private String currentToken;
 
-    //ÓÃÀ´´æ´¢¶¯Ì¬±ä»¯µÄĞÅÏ¢ÄÚÈİ
-    private Map<String, Object> map = new HashMap<String, Object>();
+    /**
+     * ç”¨æ¥å­˜å‚¨åŠ¨æ€å˜åŒ–çš„ä¿¡æ¯å†…å®¹
+     */
+    private final Map<String, Object> map = new HashMap<>();
 
     /**
-     * ¹¹Ôì·½·¨ÉèÖÃ½âÎöÄÚÈİ
+     * æ„é€ æ–¹æ³•è®¾ç½®è§£æå†…å®¹
      */
     public Context(String text) {
         this.stringTokenizer = new StringTokenizer(text);
     }
 
     /**
-     * ½âÎöÎÄ±¾
+     * è§£ææ–‡æœ¬
      *
-     * @return ½âÎöºóµÄÎÄ±¾
+     * @return è§£æåçš„æ–‡æœ¬
      */
     public String next() {
         if (this.stringTokenizer.hasMoreTokens()) {
@@ -41,34 +49,32 @@ public class Context {
     }
 
     /**
-     * ÅĞ¶ÏÃüÁîÊÇ·ñÕıÈ·
+     * åˆ¤æ–­å‘½ä»¤æ˜¯å¦æ­£ç¡®
      */
     public boolean equalsWithCommand(String command) {
         return (command == null || !command.equals(this.currentToken));
     }
 
     /**
-     * »ñÈ¡µ±Ç°ÃüÁî
+     * è·å–å½“å‰å‘½ä»¤
      *
-     * @return µ±Ç°ÃüÁî
+     * @return å½“å‰å‘½ä»¤
      */
     public String getCurrentToken() {
         return this.currentToken;
     }
 
     /**
-     * »ñµÃ½ÚµãÄÚÈİ
+     * è·å¾—èŠ‚ç‚¹å†…å®¹
      *
-     * @param text ÃüÁî
-     * @return ½ÚµãÄÚÈİ
+     * @param text å‘½ä»¤
+     * @return èŠ‚ç‚¹å†…å®¹
      */
     public String getTokenContent(String text) {
         String str = text;
         if (str != null) {
-            //Ìæ»»mapÖĞ¶¯Ì¬ÄÚÈİºó·µ»Ø
-            Iterator<String> iterator = map.keySet().iterator();
-            while (iterator.hasNext()) {
-                String key = iterator.next();
+            // æ›¿æ¢ map ä¸­åŠ¨æ€å†…å®¹åè¿”å›
+            for (String key : map.keySet()) {
                 Object obj = map.get(key);
                 str = str.replaceAll(key, obj.toString());
             }

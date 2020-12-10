@@ -1,16 +1,19 @@
 package pattern.interpreter;
 
+/**
+ * @author 0xZzzz
+ */
 public class Test {
 
     public static void main(String[] args) {
-        //´´½¨×Ô¼ºµÄÓïÑÔ
+        // åˆ›å»ºè‡ªå·±çš„è¯­è¨€
         String str = "PROGRAM PRINTLN start... FOR i FROM 90 TO 100 PRINTLN i END PRINTLN end... END";
         System.out.println("str: " + str);
 
-        //´´½¨PROGRAM±í´ïÊ½
+        // åˆ›å»ºPROGRAMè¡¨è¾¾å¼
         IExpression expression = new ProgramExpression(str);
 
-        //½âÊÍÖ´ĞĞ
+        // è§£é‡Šæ‰§è¡Œ
         expression.interpret();
     }
 }

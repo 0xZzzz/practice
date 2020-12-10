@@ -1,19 +1,21 @@
 package pattern.interpreter;
 
 /**
- * ±í´ïÊ½½Ó¿Ú
+ * è¡¨è¾¾å¼æ¥å£
+ *
+ * @author 0xZzzz
  */
 public interface IExpression {
 
     /**
-     * ½âÎö
+     * è§£æ
      *
-     * @param context ÉÏÏÂÎÄ
+     * @param context ä¸Šä¸‹æ–‡
      */
     void parse(Context context);
 
     /**
-     * Ö´ĞĞ
+     * æ‰§è¡Œ
      */
     void interpret();
 }

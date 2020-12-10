@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * ÁĞ±í±í´ïÊ½
+ * åˆ—è¡¨è¡¨è¾¾å¼
  *
  * @author 0xZzzz
  */
@@ -17,13 +17,13 @@ public class ListExpression implements IExpression {
     @Override
     public void parse(Context context) {
         this.context = context;
-        //ÔÚListExpression±í´ïÊ½ÖĞ, Ñ­»·½âÊÍÓï¾äÖĞµÄÃ¿Ò»¸öµ¥´Ê, Ö±ÖÁÖÕ½á·û±í´ïÊ½»òÕßÒì³£Çé¿öÍË³ö
+        // åœ¨ ListExpression è¡¨è¾¾å¼ä¸­, å¾ªç¯è§£é‡Šè¯­å¥ä¸­çš„æ¯ä¸€ä¸ªå•è¯, ç›´è‡³ç»ˆç»“ç¬¦è¡¨è¾¾å¼æˆ–è€…å¼‚å¸¸æƒ…å†µé€€å‡º
         while (true) {
             if (this.context.getCurrentToken() == null) {
                 System.out.println("error: the expression missing 'END'");
                 break;
             } else if (this.context.equalsWithCommand("END")) {
-                //Õı³£½áÊø
+                // æ­£å¸¸ç»“æŸ
                 this.context.next();
                 break;
             } else {
@@ -33,13 +33,11 @@ public class ListExpression implements IExpression {
         }
     }
 
-    //ÊµÏÖ½âÊÍ·½·¨
     @Override
     public void interpret() {
-        //Ñ­»·listÁĞ±íÖĞÃ¿Ò»¸ö±í´ïÊ½, ½âÊÍÖ´ĞĞ
-        Iterator<IExpression> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            (iterator.next()).interpret();
+        // å¾ªç¯ list åˆ—è¡¨ä¸­æ¯ä¸€ä¸ªè¡¨è¾¾å¼, è§£é‡Šæ‰§è¡Œ
+        for (IExpression iExpression : list) {
+            iExpression.interpret();
         }
     }
 

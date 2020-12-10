@@ -1,7 +1,7 @@
 package pattern.interpreter;
 
 /**
- * 最基础的表达式
+ * 鏈�鍩虹鐨勮〃杈惧紡
  *
  * @author 0xZzzz
  */
@@ -9,10 +9,14 @@ public class PrimitiveExpression implements IExpression {
 
     private Context context;
 
-    //节点名称
+    /**
+     * 鑺傜偣鍚嶇О
+     */
     private String tokenName;
 
-    //文本内容
+    /**
+     * 鏂囨湰鍐呭
+     */
     private String text;
 
     public PrimitiveExpression(Context context) {
@@ -30,7 +34,6 @@ public class PrimitiveExpression implements IExpression {
         }
     }
 
-    //实现解释方法
     @Override
     public void interpret() {
         if ("PRINTLN".endsWith(tokenName)) {
