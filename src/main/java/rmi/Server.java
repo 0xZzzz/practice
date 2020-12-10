@@ -3,18 +3,21 @@ package rmi;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
+
 /**
- * rmi·şÎñ¶Ë
- * @author ZQ
+ * rmi æœåŠ¡ç«¯
  *
+ * @author 0xZzzz
  */
 public class Server {
-	public static void main(String[] args) throws Exception {
-		int port = 9527;
-		String name = "BusinessDemo";
-		Business business = new BusinessImpl();
-		UnicastRemoteObject.exportObject(business, port); //Ê¹ÓÃÌá¹©µÄÌØ¶¨¶Ë¿Úµ¼³öÔ¶³Ì¶ÔÏó£¬ÒÔ±ãÄÜ¹»½ÓÊÕ´«ÈëµÄµ÷ÓÃ
-		LocateRegistry.createRegistry(1099); //´´½¨²¢µ¼³ö½ÓÊÜÖ¸¶¨ port ÇëÇóµÄ±¾µØÖ÷»úÉÏµÄ RegistryÊµÀı
-		Naming.bind(name, business);
-	}
+    public static void main(String[] args) throws Exception {
+        int port = 9527;
+        String name = "BusinessDemo";
+        Business business = new BusinessImpl();
+        // ä½¿ç”¨æä¾›çš„ç‰¹å®šç«¯å£å¯¼å‡ºè¿œç¨‹å¯¹è±¡ï¼Œä»¥ä¾¿èƒ½å¤Ÿæ¥æ”¶ä¼ å…¥çš„è°ƒç”¨
+        UnicastRemoteObject.exportObject(business, port);
+        // åˆ›å»ºå¹¶å¯¼å‡ºæ¥å—æŒ‡å®š port è¯·æ±‚çš„æœ¬åœ°ä¸»æœºä¸Šçš„ Registryå®ä¾‹
+        LocateRegistry.createRegistry(1099);
+        Naming.bind(name, business);
+    }
 }

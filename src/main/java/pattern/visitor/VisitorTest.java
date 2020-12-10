@@ -1,5 +1,8 @@
 package pattern.visitor;
 
+/**
+ * @author 0xZzzz
+ */
 public class VisitorTest {
 
     public static void main(String[] args) {
